@@ -5,13 +5,15 @@ import '../../UI/components/rounded_button.dart';
 import '../../UI/design_materials/DM_colors.dart';
 
 class InteractionScreen extends StatelessWidget {
-  static const platform = const MethodChannel("test_activity");
+  static const platform = MethodChannel('samples.flutter.dev/battery');
 
-  _getNewActivity() async {
+  Future<void> _getBatteryLevel() async {
+    String batteryLevel;
     try {
-      await platform.invokeMethod('startNewActivity');
+      final int result = await platform.invokeMethod('helloFromNativeCode');
+      batteryLevel = 'Battery level at $result % .';
     } on PlatformException catch (e) {
-      print(e.message);
+      batteryLevel = "Failed to get battery level: '${e.message}'.";
     }
   }
 
@@ -31,8 +33,8 @@ class InteractionScreen extends StatelessWidget {
             minWidth: 250.0,
             color: Colors.blue,
             textColor: Colors.white,
-            onPressed: () {
-              _getNewActivity();
+            onPressed: () async {
+              await _getBatteryLevel();
             },
           ),
           RoundedButton(
