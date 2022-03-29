@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/UI/widgets/we_avatar.dart';
+import '../../core/UI/widgets/rounded_list_tile.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../models/model_comment.dart';
-import '../../models/model_friend.dart';
 import '../../models/model_post.dart';
 import '../../models/model_user.dart';
 import '../../providers/provider_feed.dart';
-import '../../utils/utilities_general.dart';
-import '../components/rounded_list_tile.dart';
-import '../components/we_avatar.dart';
 
 class CommentView extends StatefulWidget {
   final CommentModel commentModel;

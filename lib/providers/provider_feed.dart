@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:gatezero_demo/UI/design_materials/mock_lists.dart';
+import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:gatezero_demo/models/model_comment.dart';
-import 'package:http/http.dart';
+import 'package:flutter/material.dart';
 
 import '../models/model_post.dart';
 import '../models/model_story.dart';

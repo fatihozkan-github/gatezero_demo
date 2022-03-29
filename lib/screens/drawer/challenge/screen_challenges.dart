@@ -2,15 +2,14 @@ import 'package:speech_balloon/speech_balloon.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import '../../../UI/components/overflow_handler.dart';
-import '../../../UI/design_materials/DM_styles.dart';
-import '../../../UI/design_materials/DM_assets.dart';
-import '../../../UI/design_materials/DM_colors.dart';
-import '../../../UI/design_materials/DM_lists.dart';
-import '../../../UI/components/over_scroll.dart';
-import '../../../utils/utilities_arguments.dart';
+import '../../../core/UI/shared/assets.dart';
+import '../../../core/UI/shared/colors.dart';
+import '../../../core/UI/shared/lists.dart';
+import '../../../core/UI/shared/styles.dart';
+import '../../../core/UI/widgets/over_scroll.dart';
+import '../../../core/UI/widgets/overflow_handler.dart';
+import '../../../core/utils/utilities_arguments.dart';
 import '../../../models/model_challenge.dart';
-import '../../../services/service_hive.dart';
 
 class ChallengeScreen extends StatefulWidget {
   @override
@@ -28,9 +27,9 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
         Duration(milliseconds: 500),
         () async {
           int _currentStep = 1;
-          bool _isCompleted = false;
-          if (_isCompleted) HiveService.setChallengeStep(value: _currentStep + 1);
-          setState(() => _currentChallengeStep = HiveService.getChallengeStep());
+          // bool _isCompleted = false;
+          // if (_isCompleted) HiveService.setChallengeStep(value: _currentStep + 1);
+          setState(() => _currentStep);
         },
       );
     });

@@ -1,21 +1,21 @@
-import 'package:gatezero_demo/UI/components/over_scroll.dart';
+import 'package:gatezero_demo/core/UI/widgets/over_scroll.dart';
 import 'package:lottie/lottie.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-import '../../UI/components/or_divider.dart';
-import '../../UI/components/overflow_handler.dart';
-import '../../UI/components/we_avatar.dart';
-import '../../UI/components/we_wave.dart';
-import '../../UI/design_materials/DM_assets.dart';
-import '../../UI/design_materials/DM_colors.dart';
-import '../../UI/design_materials/DM_lists.dart';
-import '../../UI/design_materials/DM_styles.dart';
-import '../../models/model_user.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/UI/shared/lists.dart';
+import '../../core/UI/shared/styles.dart';
+import '../../core/UI/widgets/or_divider.dart';
+import '../../core/UI/widgets/overflow_handler.dart';
+import '../../core/UI/widgets/we_avatar.dart';
+import '../../core/UI/widgets/we_wave.dart';
+import '../../core/services/service_localization.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../providers/provider_user.dart';
-import '../../services/service_localization.dart';
-import '../../utils/utilities_general.dart';
+import '../../models/model_user.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     _currentUser = Provider.of<UserProvider>(context, listen: true).currentUser;
     return Scaffold(
-      backgroundColor: UIColors.tertiaryColor,
+      backgroundColor: Colors.white,
       appBar: _getAppBar(),
       body: OverScroll(
         child: ListView(

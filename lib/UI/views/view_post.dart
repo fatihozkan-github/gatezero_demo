@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gatezero_demo/UI/design_materials/mock_lists.dart';
+import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:gatezero_demo/UI/views/view_comment.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -10,19 +10,19 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/UI/widgets/rounded_text_field.dart';
+import '../../core/utils/utilities_arguments.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../models/model_comment.dart';
 import '../../models/model_post.dart';
 import '../../models/model_user.dart';
 import '../../providers/provider_feed.dart';
-import '../../utils/utilities_arguments.dart';
-import '../../utils/utilities_general.dart';
-import '../components/or_divider.dart';
-import '../components/over_scroll.dart';
-import '../components/rounded_text_field.dart';
-import '../components/we_avatar.dart';
-import '../components/we_spin.dart';
-import '../design_materials/DM_assets.dart';
-import '../design_materials/DM_colors.dart';
+import '../../core/UI/widgets/or_divider.dart';
+import '../../core/UI/widgets/over_scroll.dart';
+import '../../core/UI/widgets/we_avatar.dart';
+import '../../core/UI/widgets/we_spin.dart';
 
 class PostView extends StatefulWidget {
   PostModel postModel;

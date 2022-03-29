@@ -1,20 +1,20 @@
 import 'package:gatezero_demo/providers/provider_interaction.dart';
-import 'package:lottie/lottie.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'dart:async';
 
-import '../../UI/design_materials/DM_assets.dart';
-import '../../UI/design_materials/DM_colors.dart';
-import '../../UI/design_materials/DM_styles.dart';
-import '../../UI/design_materials/DM_lists.dart';
-import '../../UI/components/async_button.dart';
-import '../../UI/components/or_divider.dart';
-import '../../UI/components/we_avatar.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/UI/shared/lists.dart';
+import '../../core/UI/shared/styles.dart';
+import '../../core/UI/widgets/async_button.dart';
+import '../../core/UI/widgets/or_divider.dart';
+import '../../core/UI/widgets/we_avatar.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../providers/provider_user.dart';
-import '../../utils/utilities_general.dart';
-import '../../UI/components/we_spin.dart';
+import '../../core/UI/widgets/we_spin.dart';
 
 class CalculationScreen extends StatefulWidget {
   @override
@@ -43,7 +43,7 @@ class _CalculationScreenState extends State<CalculationScreen> with SingleTicker
     await Future.delayed(Duration(seconds: 2), () => setState(() => _feedbackIndex++));
     await Future.delayed(Duration(seconds: 2), () => setState(() => _feedbackIndex++));
     calculate();
-    await Future.delayed(Duration(seconds: 2), () => setState(() => _isCompleted = true));
+    await Future.delayed(Duration(seconds: 3), () => setState(() => _isCompleted = true));
   }
 
   AnimationController _controller;
@@ -85,7 +85,7 @@ class _CalculationScreenState extends State<CalculationScreen> with SingleTicker
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                            color: GeneralUtils.hasData(_avatar) ? Colors.orange : Colors.greenAccent,
+                            color: GeneralUtils.hasData(_avatar) ? Colors.purple : Colors.greenAccent,
                             spreadRadius: 4,
                             blurRadius: 10),
                         BoxShadow(

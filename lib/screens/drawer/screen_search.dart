@@ -1,14 +1,14 @@
-import 'package:gatezero_demo/UI/design_materials/mock_lists.dart';
+import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:flutter/material.dart';
 
-import '../../UI/components/rounded_list_tile.dart';
-import '../../UI/components/rounded_text_field.dart';
-import '../../UI/components/we_spin.dart';
-import '../../UI/design_materials/DM_assets.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/widgets/rounded_list_tile.dart';
+import '../../core/UI/widgets/rounded_text_field.dart';
+import '../../core/UI/widgets/we_spin.dart';
+import '../../core/services/service_localization.dart';
+import '../../core/utils/utilities_arguments.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../models/model_friend.dart';
-import '../../services/service_localization.dart';
-import '../../utils/utilities_arguments.dart';
-import '../../utils/utilities_general.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -63,7 +63,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               decoration: BoxDecoration(shape: BoxShape.circle),
                               child: Image(
                                 image: GeneralUtils.hasData(_userList[index].avatar)
-                                    ? NetworkImage(_userList[index].avatar)
+                                    ? AssetImage(_userList[index].avatar)
                                     : AssetImage(UIAssets.leaderBoardUserIcon),
                                 fit: BoxFit.cover,
                               ),

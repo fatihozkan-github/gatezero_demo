@@ -1,9 +1,9 @@
 import 'package:stories_for_flutter/stories_for_flutter.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/utilities_general.dart';
-import '../design_materials/DM_assets.dart';
-import '../design_materials/DM_colors.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../models/model_story.dart';
 
 /// • Story container for WE.

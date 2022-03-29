@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/UI/shared/utils.dart';
 import '../../models/model_badge.dart';
-import '../components/we_icon_button.dart';
-import '../design_materials/DM_colors.dart';
-import '../design_materials/DM_utils.dart';
+import '../../core/UI/widgets/we_icon_button.dart';
 
 class BadgeView extends StatelessWidget {
   final bool condition;

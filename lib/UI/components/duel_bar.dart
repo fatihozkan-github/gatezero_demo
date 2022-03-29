@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/UI/components/we_avatar.dart';
+import 'package:gatezero_demo/core/UI/widgets/we_avatar.dart';
 
-import '../design_materials/DM_assets.dart';
-import '../design_materials/DM_colors.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
 
 /// • Duel bar for duels.
 class DuelBar extends StatefulWidget {
@@ -67,7 +67,7 @@ class _DuelBarState extends State<DuelBar> {
                   flex: _firstRatio.toInt(),
                   child: Container(
                     height: 60,
-                    color: Colors.orange,
+                    color: UIColors.primaryColor,
                     alignment: Alignment.centerRight,
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -79,7 +79,7 @@ class _DuelBarState extends State<DuelBar> {
                   flex: _secondRatio.toInt(),
                   child: Container(
                     height: 60,
-                    color: UIColors.primaryColor,
+                    color: UIColors.secondaryColor,
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),

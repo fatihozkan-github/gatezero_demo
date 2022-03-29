@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../../../UI/components/rounded_list_tile.dart';
-import '../../../../UI/components/we_spin.dart';
+import '../../../../core/UI/widgets/rounded_list_tile.dart';
+import '../../../../core/UI/widgets/we_spin.dart';
 import '../model/training_video.dart';
 import '../model/training_video_history.dart';
 import '../service/training_set_service.dart';

@@ -1,4 +1,4 @@
-import '../utils/utilities_constants.dart';
+import '../core/utils/utilities_constants.dart';
 
 class UserModel {
   String uID;
@@ -65,6 +65,5 @@ class UserModel {
 
   String calculateFootPrint() => (recycled / 10.25 * 82.8 / 1000).toStringAsFixed(2);
 
-  /// • TODO: Adjust this function.
-  String calculateImpact() => (recycled / 10.25 * 82.8 / 1000).toStringAsFixed(2);
+  String calculateImpact() => (recycled / 10.25 * 82.8 / 2000).toStringAsFixed(2);
 }

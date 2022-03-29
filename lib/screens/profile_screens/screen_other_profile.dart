@@ -1,18 +1,18 @@
-import 'package:gatezero_demo/UI/design_materials/DM_utils.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
-import '../../UI/components/overflow_handler.dart';
-import '../../UI/design_materials/DM_styles.dart';
-import '../../UI/design_materials/DM_assets.dart';
-import '../../UI/design_materials/DM_colors.dart';
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/colors.dart';
+import '../../core/UI/shared/styles.dart';
+import '../../core/UI/shared/utils.dart';
+import '../../core/UI/widgets/overflow_handler.dart';
+import '../../core/utils/utilities_arguments.dart';
+import '../../core/utils/utilities_general.dart';
 import '../../models/model_user.dart';
-import '../../utils/utilities_arguments.dart';
-import '../../utils/utilities_general.dart';
-import '../../UI/components/we_avatar.dart';
-import '../../UI/components/we_wave.dart';
+import '../../core/UI/widgets/we_avatar.dart';
+import '../../core/UI/widgets/we_wave.dart';
 
 class OtherProfileScreen extends StatefulWidget {
   @override
@@ -110,7 +110,6 @@ class _OtherProfileScreenState extends State<OtherProfileScreen> {
                         GestureDetector(
                           child: Lottie.asset(UIAssets.swordsGif, height: 200, fit: BoxFit.fitWidth),
                           onTap: () {
-                            /// TODO: duel function.
                             UIUtils.showToast("Düelloya davet edildi, bol şans!", shortDuration: false);
                           },
                         ),

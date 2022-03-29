@@ -1,8 +1,9 @@
-import '../../UI/design_materials/DM_assets.dart';
-import '../../UI/design_materials/DM_styles.dart';
-import '../../services/service_localization.dart';
-import '../../utils/utilities_general.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/UI/shared/assets.dart';
+import '../../core/UI/shared/styles.dart';
+import '../../core/services/service_localization.dart';
+import '../../core/utils/utilities_general.dart';
 
 class InviteScreen extends StatelessWidget {
   @override

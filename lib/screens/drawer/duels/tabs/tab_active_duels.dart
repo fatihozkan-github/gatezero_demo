@@ -1,8 +1,7 @@
+import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:expandable_widgets/expandable_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:gatezero_demo/UI/design_materials/mock_lists.dart';
-import 'package:gatezero_demo/models/model_user.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../UI/components/duel_bar.dart';

@@ -1,6 +1,7 @@
-import 'package:gatezero_demo/UI/design_materials/DM_colors.dart';
-import 'package:gatezero_demo/services/service_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/UI/shared/colors.dart';
+import '../../core/services/service_localization.dart';
 
 /// • Account check template for login & sign up pages
 class AccountCheck extends StatelessWidget {

@@ -4,9 +4,9 @@ import 'package:gatezero_demo/UI/components/we_coin.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/UI/shared/utils.dart';
 import '../../models/model_prize.dart';
 import '../../models/model_user.dart';
-import '../design_materials/DM_utils.dart';
 
 class PrizeCoupon extends StatelessWidget {
   final PrizeModel prizeModel;

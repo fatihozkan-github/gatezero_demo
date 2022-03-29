@@ -1,3 +1,0 @@
-0 mobile
-1 stationary
-2 group

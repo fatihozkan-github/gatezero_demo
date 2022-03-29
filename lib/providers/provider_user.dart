@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/UI/design_materials/mock_lists.dart';
+import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:gatezero_demo/models/model_friend.dart';
 import '../models/model_user.dart';
 
@@ -22,7 +22,6 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// TODO: add friend function.
   addFriend(FriendModel friendData) {
     currentUser.friends.add(friendData);
     notifyListeners();

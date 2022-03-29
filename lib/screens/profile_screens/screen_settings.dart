@@ -1,4 +1,4 @@
-import '../../UI/components/rounded_list_tile.dart';
+import '../../core/UI/widgets/rounded_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
