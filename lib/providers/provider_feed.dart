@@ -1,5 +1,5 @@
 import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
-import 'package:gatezero_demo/models/model_comment.dart';
+import 'package:gatezero_demo/features/features_main/data/models/model_comment.dart';
 import 'package:flutter/material.dart';
 
 import '../features/features_main/data/models/model_post.dart';

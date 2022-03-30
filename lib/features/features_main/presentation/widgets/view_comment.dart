@@ -6,9 +6,9 @@ import 'package:provider/provider.dart';
 import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/UI/widgets/rounded_list_tile.dart';
 import '../../../../core/utils/utilities_general.dart';
-import '../../../../models/model_comment.dart';
+import '../../data/models/model_comment.dart';
 import '../../data/models/model_post.dart';
-import '../../../../models/model_user.dart';
+import '../../../../core/models/model_user.dart';
 import '../../../../providers/provider_feed.dart';
 
 class CommentView extends StatefulWidget {

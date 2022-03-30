@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
 
-import '../../models/model_challenge.dart';
-import '../../models/model_friend.dart';
+import '../../features/features_drawer/data/models/model_challenge.dart';
+import '../models/model_friend.dart';
 
 class OtherProfileScreenArgs {
   FriendModel friendModel;

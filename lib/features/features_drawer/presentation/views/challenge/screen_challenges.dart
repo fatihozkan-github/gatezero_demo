@@ -9,7 +9,7 @@ import '../../../../../core/UI/shared/styles.dart';
 import '../../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../../core/utils/utilities_arguments.dart';
-import '../../../../../models/model_challenge.dart';
+import '../../../data/models/model_challenge.dart';
 
 class ChallengeScreen extends StatefulWidget {
   @override

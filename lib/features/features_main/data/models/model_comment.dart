@@ -1,4 +1,4 @@
-import 'package:gatezero_demo/models/model_friend.dart';
+import '../../../../core/models/model_friend.dart';
 
 class CommentModel {
   final String uID;

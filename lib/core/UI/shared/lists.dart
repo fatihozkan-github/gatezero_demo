@@ -1,9 +1,9 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/model_badge.dart';
-import '../../../models/model_challenge.dart';
-import '../../../models/model_drawer_item.dart';
+import '../../../features/features_drawer/data/models/model_badge.dart';
+import '../../../features/features_drawer/data/models/model_challenge.dart';
+import '../../models/model_drawer_item.dart';
 import '../../services/service_localization.dart';
 import '../../utils/utilities_constants.dart';
 import 'assets.dart';

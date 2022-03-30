@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'gatezero_coin.dart';
 import '../../../../core/UI/shared/utils.dart';
 import '../../data/models/model_prize.dart';
-import '../../../../models/model_user.dart';
+import '../../../../core/models/model_user.dart';
 
 class PrizeWidget extends StatelessWidget {
   final PrizeModel prizeModel;

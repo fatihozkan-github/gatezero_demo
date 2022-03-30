@@ -10,7 +10,7 @@ import '../../../../core/UI/shared/utils.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../core/utils/utilities_arguments.dart';
 import '../../../../core/utils/utilities_general.dart';
-import '../../../../models/model_user.dart';
+import '../../../../core/models/model_user.dart';
 import '../../../../core/UI/widgets/gatezero_avatar.dart';
 
 class OtherProfileView extends StatefulWidget {

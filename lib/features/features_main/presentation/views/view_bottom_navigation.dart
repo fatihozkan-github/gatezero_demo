@@ -11,7 +11,7 @@ import '../../../../core/UI/shared/lists.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/utils/utilities_general.dart';
-import '../../../../models/model_user.dart';
+import '../../../../core/models/model_user.dart';
 import '../../../../providers/provider_user.dart';
 import '../view_models/view_model_bottom_navigation.dart';
 import 'feed/view_feed.dart';

@@ -1,4 +1,4 @@
-import '../core/utils/utilities_constants.dart';
+import '../utils/utilities_constants.dart';
 
 class UserModel {
   String uID;

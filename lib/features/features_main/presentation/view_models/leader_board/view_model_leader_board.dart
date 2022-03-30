@@ -1,6 +1,6 @@
 import '../../../../../core/UI/presentation/view_model_base.dart';
 import '../../../../../core/UI/shared/mock_lists.dart';
-import '../../../../../models/model_friend.dart';
+import '../../../../../core/models/model_friend.dart';
 
 class LeaderBoardViewModel extends BaseViewModel {
   List<FriendModel> _people = Mocks.mockUserList;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/utils.dart';
-import '../../../../models/model_badge.dart';
+import '../../data/models/model_badge.dart';
 import '../../../../core/UI/widgets/gatezero_icon_button.dart';
 
 class BadgeWidget extends StatelessWidget {

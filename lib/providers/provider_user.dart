@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
-import 'package:gatezero_demo/models/model_friend.dart';
-import '../models/model_user.dart';
+import '../core/models/model_friend.dart';
+import '../core/models/model_user.dart';
 
 class UserProvider extends ChangeNotifier {
   UserModel currentUser = UserModel(
