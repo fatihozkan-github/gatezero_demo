@@ -18,11 +18,11 @@ class BaseViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  // TODO: Revise
   void navigateTo(String path, {RouterAction action, var result}) {
     switch (action) {
       case RouterAction.popAndPush:
-        print("TODO: handle this case!");
+        _appRouter.pop();
+        _appRouter.pushNamed(path);
         break;
       case RouterAction.pushAndRemove:
         _appRouter.replaceNamed(path);
@@ -36,7 +36,6 @@ class BaseViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// TODO: Revise
   void validateForm(GlobalKey<FormState> formKey, {List<TextEditingController> controllers = const [], bool showFeedBack = true}) {
     if (formKey.currentState.validate()) {
       bool _doFieldsHaveText = controllers.every((element) => element.text.isNotEmpty);
@@ -49,8 +48,6 @@ class BaseViewModel extends ChangeNotifier {
   }
 
   void showToast(String msg, {bool shortDuration = true, bool success = null}) => UIUtils.showToast(msg);
-
-  // void showPopUp(String msg, {String title, String subTitle, bool showBackButton = false}) => UIUtils.showGenericPopUp(msg);
 
   Future<void> shareScreenshot(ScreenshotController ssController) async => await GeneralUtils.takeSSandShare(ssController);
 }

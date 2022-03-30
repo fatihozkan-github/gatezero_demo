@@ -1,8 +1,8 @@
-import 'package:gatezero_demo/core/UI/widgets/we_spin.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/colors.dart';
+import 'widget_loading.dart';
 
 /// • Refreshes the page when pulled down.
 ///
@@ -37,7 +37,7 @@ class _PullRefresherState extends State<PullRefresher> {
   @override
   Widget build(BuildContext context) {
     return _refreshController.isRefresh
-        ? WESpinKit()
+        ? LoadingWidget()
         : SmartRefresher(
             enablePullUp: true,
             child: widget.child,
@@ -52,7 +52,7 @@ class _PullRefresherState extends State<PullRefresher> {
 
   _getHeader() => WaterDropHeader(
         waterDropColor: Colors.transparent,
-        refresh: WESpinKit(size: 20),
+        refresh: LoadingWidget(size: 20),
         idleIcon: Icon(Icons.autorenew, size: 20, color: UIColors.primaryColor),
         complete: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +71,7 @@ class _PullRefresherState extends State<PullRefresher> {
             if (mode == LoadStatus.idle) {
               body = Text("");
             } else if (mode == LoadStatus.loading) {
-              body = WESpinKit();
+              body = LoadingWidget();
             } else if (mode == LoadStatus.failed) {
               body = Text("Bir hata oluştu, tekrar dene!");
             } else if (mode == LoadStatus.canLoading) {

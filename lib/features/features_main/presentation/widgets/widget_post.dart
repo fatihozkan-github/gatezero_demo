@@ -16,13 +16,13 @@ import '../../../../core/UI/widgets/rounded_text_field.dart';
 import '../../../../core/utils/utilities_arguments.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../models/model_comment.dart';
-import '../../../../models/model_post.dart';
+import '../../data/models/model_post.dart';
 import '../../../../models/model_user.dart';
 import '../../../../providers/provider_feed.dart';
 import '../../../../core/UI/widgets/or_divider.dart';
 import '../../../../core/UI/widgets/over_scroll.dart';
-import '../../../../core/UI/widgets/we_avatar.dart';
-import '../../../../core/UI/widgets/we_spin.dart';
+import '../../../../core/UI/widgets/gatezero_avatar.dart';
+import '../../../../core/UI/widgets/widget_loading.dart';
 
 /// TODO: Revise
 class PostWidget extends StatefulWidget {
@@ -81,7 +81,7 @@ class _PostWidgetState extends State<PostWidget> with SingleTickerProviderStateM
         children: <Widget>[
           ListTile(
             leading: TextButton(
-              child: WEAvatar(image: widget.postModel.publisherAvatar, fallBackImage: Image.asset(UIAssets.generalLogo)),
+              child: GateZeroAvatar(image: widget.postModel.publisherAvatar, fallBackImage: Image.asset(UIAssets.generalLogo)),
               style: TextButton.styleFrom(padding: EdgeInsets.all(6.0), shape: CircleBorder()),
               onPressed: () {
                 if (GeneralUtils.hasData(widget.postModel.publisherID)) {
@@ -208,7 +208,7 @@ class _PostWidgetState extends State<PostWidget> with SingleTickerProviderStateM
   bool _isLoading = false;
   ScreenshotController _ssController = ScreenshotController();
   _getShareButton() => IconButton(
-        icon: _isLoading ? WESpinKit(size: 22) : Icon(Icons.share_rounded, size: 22),
+        icon: _isLoading ? LoadingWidget(size: 22) : Icon(Icons.share_rounded, size: 22),
         onPressed: () async {
           setState(() => _isLoading = true);
           await GeneralUtils.takeSSandShare(_ssController, ssName: widget.postModel.id)

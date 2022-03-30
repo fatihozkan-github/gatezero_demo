@@ -1,8 +1,8 @@
 import 'package:gatezero_demo/models/model_comment.dart';
 import 'package:gatezero_demo/models/model_friend.dart';
-import 'package:gatezero_demo/models/model_prize.dart';
-import 'package:gatezero_demo/models/model_story.dart';
-import 'package:gatezero_demo/models/model_post.dart';
+import 'package:gatezero_demo/features/features_main/data/models/model_prize.dart';
+import 'package:gatezero_demo/features/features_main/data/models/model_story.dart';
+import 'package:gatezero_demo/features/features_main/data/models/model_post.dart';
 
 import 'assets.dart';
 

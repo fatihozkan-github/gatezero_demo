@@ -8,7 +8,7 @@ import '../../../../../core/UI/shared/assets.dart';
 import '../../../../../core/UI/shared/colors.dart';
 import '../../../../../core/UI/shared/mock_lists.dart';
 import '../../../../../core/UI/widgets/over_scroll.dart';
-import '../../../../../models/model_prize.dart';
+import '../../../data/models/model_prize.dart';
 import '../../../../../models/model_user.dart';
 import '../../../../../providers/provider_user.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/core/UI/widgets/we_avatar.dart';
+import 'package:gatezero_demo/core/UI/widgets/gatezero_avatar.dart';
 
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
@@ -54,7 +54,7 @@ class _DuelBarState extends State<DuelBar> {
       child: Column(
         children: [
           Row(children: [
-            WEAvatar(image: widget.firstAvatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
+            GateZeroAvatar(image: widget.firstAvatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
             SizedBox(width: 10),
             Text(widget.firstName)
           ]),
@@ -96,7 +96,7 @@ class _DuelBarState extends State<DuelBar> {
             children: [
               Text(widget.secondName),
               SizedBox(width: 10),
-              WEAvatar(image: widget.secondAvatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon))
+              GateZeroAvatar(image: widget.secondAvatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon))
             ],
           ),
         ],

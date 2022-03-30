@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/utilities_general.dart';
 
-class WEAvatar extends StatelessWidget {
+class GateZeroAvatar extends StatelessWidget {
   final double size;
   final String image;
   final Color loaderColor;
@@ -11,7 +11,7 @@ class WEAvatar extends StatelessWidget {
   final double loaderSize;
   final bool polygonBorder;
 
-  WEAvatar({
+  GateZeroAvatar({
     this.size = 48,
     this.image,
     this.loaderColor = Colors.white,

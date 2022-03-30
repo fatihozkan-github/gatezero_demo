@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/widgets/rounded_list_tile.dart';
 import '../../../../core/UI/widgets/rounded_text_field.dart';
-import '../../../../core/UI/widgets/we_spin.dart';
+import '../../../../core/UI/widgets/widget_loading.dart';
 import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_arguments.dart';
 import '../../../../core/utils/utilities_general.dart';
@@ -46,7 +46,7 @@ class _SearchViewState extends State<SearchView> {
           ),
           Expanded(
             child: _isLoading
-                ? WESpinKit()
+                ? LoadingWidget()
                 : ListView.builder(
                     shrinkWrap: true,
                     itemCount: _userList.length,

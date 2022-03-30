@@ -414,7 +414,7 @@ packages:
     source: hosted
     version: "2.1.2"
   geolocator:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: geolocator
       url: "https://pub.dartlang.org"

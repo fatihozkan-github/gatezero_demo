@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/UI/widgets/we_avatar.dart';
+import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/UI/widgets/rounded_list_tile.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../models/model_comment.dart';
-import '../../../../models/model_post.dart';
+import '../../data/models/model_post.dart';
 import '../../../../models/model_user.dart';
 import '../../../../providers/provider_feed.dart';
 
@@ -31,7 +31,7 @@ class _CommentViewState extends State<CommentView> {
   Widget build(BuildContext context) {
     UserModel _currentUser = Provider.of<UserProvider>(context, listen: true).currentUser;
     return RoundedListTile(
-      leading: WEAvatar(image: (widget.commentModel.author.avatar)),
+      leading: GateZeroAvatar(image: (widget.commentModel.author.avatar)),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

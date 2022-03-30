@@ -11,7 +11,7 @@ import '../../../../core/UI/shared/styles.dart';
 import '../../../../core/UI/widgets/or_divider.dart';
 import '../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
-import '../../../../core/UI/widgets/we_avatar.dart';
+import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../models/model_user.dart';
@@ -97,7 +97,7 @@ class _ProfileViewState extends State<ProfileView> {
               ),
             ],
           ),
-          WEAvatar(
+          GateZeroAvatar(
             size: 170,
             polygonBorder: true,
             image: _currentUser.avatar,

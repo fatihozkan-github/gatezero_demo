@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/utils/utilities_general.dart';
-import '../../../../models/model_story.dart';
+import '../../data/models/model_story.dart';
 
 class StoryWidget extends StatelessWidget {
   final StoryModel storyData;

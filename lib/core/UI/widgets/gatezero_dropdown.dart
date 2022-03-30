@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../shared/colors.dart';
 
 // ignore: must_be_immutable
-class WEDropdown extends StatelessWidget {
+class GateZeroDropdown extends StatelessWidget {
   dynamic value;
   final List items;
   final bool isExpanded;
   final Color fillColor;
   final Function(dynamic) onChanged;
-  WEDropdown({this.value, this.onChanged, this.items, this.isExpanded = true, this.fillColor});
+  GateZeroDropdown({this.value, this.onChanged, this.items, this.isExpanded = true, this.fillColor});
 
   @override
   Widget build(BuildContext context) {

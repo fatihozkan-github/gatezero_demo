@@ -11,8 +11,7 @@ import '../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../core/utils/utilities_arguments.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../models/model_user.dart';
-import '../../../../core/UI/widgets/we_avatar.dart';
-import '../../../../core/UI/widgets/we_wave.dart';
+import '../../../../core/UI/widgets/gatezero_avatar.dart';
 
 class OtherProfileView extends StatefulWidget {
   @override
@@ -61,8 +60,9 @@ class _OtherProfileViewState extends State<OtherProfileView> {
   Stack _getProfilePic(OtherProfileScreenArgs args) => Stack(
         alignment: Alignment.center,
         children: [
-          ClipRRect(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)), child: WEWave(heightFactor: 0.5)),
-          WEAvatar(
+          /// TODO
+          // ClipRRect(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)), child: WEWave(heightFactor: 0.5)),
+          GateZeroAvatar(
             image: args.friendModel.avatar,
             size: 190,
             fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon, width: 190, height: 190),

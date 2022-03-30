@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/utilities_enums.dart';
-import 'we_spin.dart';
+import 'widget_loading.dart';
 
 class CustomScaffold extends StatelessWidget {
   final ActivityState activityState;
@@ -12,7 +12,7 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (activityState == ActivityState.isLoading)
-      return WESpinKit();
+      return LoadingWidget();
     else if (activityState == ActivityState.error) return Center(child: Text("ERROR"));
     return child;
   }

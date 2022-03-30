@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/core/UI/widgets/over_scroll.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import 'over_scroll.dart';
 import 'overflow_handler.dart';
 
 class RoundedListTile extends StatelessWidget {

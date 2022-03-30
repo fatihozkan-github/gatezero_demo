@@ -2,16 +2,16 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
 
 /// • Loading animation for WE.
-class WESpinKit extends StatefulWidget {
+class LoadingWidget extends StatefulWidget {
   final Color color;
   final double size;
-  WESpinKit({this.color, this.size});
+  LoadingWidget({this.color, this.size});
 
   @override
-  State<WESpinKit> createState() => _WESpinKitState();
+  State<LoadingWidget> createState() => _LoadingWidgetState();
 }
 
-class _WESpinKitState extends State<WESpinKit> with SingleTickerProviderStateMixin {
+class _LoadingWidgetState extends State<LoadingWidget> with SingleTickerProviderStateMixin {
   @override
   Widget build(context) => Center(child: SpinKitSpinningLines(color: widget.color ?? Colors.purple, size: widget.size ?? 50.0));
 }

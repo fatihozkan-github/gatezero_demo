@@ -57,7 +57,6 @@ dependencies:
   easy_localization: ^3.0.0
   flutter_native_splash: ^2.1.1
   http: ^0.13.4
-  geolocator: ^7.6.2
   ar_flutter_plugin: ^0.6.2
   auto_route: ^3.2.4
   get_it: ^7.2.0

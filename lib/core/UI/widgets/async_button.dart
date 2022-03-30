@@ -2,7 +2,7 @@ import 'package:async_button_builder/async_button_builder.dart';
 import 'package:flutter/material.dart';
 
 import 'rounded_button.dart';
-import 'we_spin.dart';
+import 'widget_loading.dart';
 
 class AsyncButton extends StatelessWidget {
   final String label;
@@ -18,7 +18,7 @@ class AsyncButton extends StatelessWidget {
       showError: false,
       showSuccess: false,
       onPressed: onPressed,
-      loadingWidget: WESpinKit(color: Colors.white, size: 25),
+      loadingWidget: LoadingWidget(color: Colors.white, size: 25),
       child: Text(label, style: TextStyle(color: Colors.white)),
       builder: (context, child, callback, _) => !useElevatedButton
           ? RoundedButton(useCustomChild: true, customChild: child, onPressed: callback)

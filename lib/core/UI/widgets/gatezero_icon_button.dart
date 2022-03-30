@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'overflow_handler.dart';
 
-class WEIconButton extends StatelessWidget {
+class GateZeroIconButton extends StatelessWidget {
   final Widget icon;
   final String title;
   final double width;
   final Function onPressed;
   final TextStyle textStyle;
 
-  WEIconButton({this.title, this.icon, this.onPressed, this.textStyle, this.width});
+  GateZeroIconButton({this.title, this.icon, this.onPressed, this.textStyle, this.width});
 
   @override
   Widget build(BuildContext context) {

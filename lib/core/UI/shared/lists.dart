@@ -30,7 +30,7 @@ class UILists {
   ];
 
   static List<DrawerItemModel> drawerItems = [
-    DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/view_badge'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/view_badges'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/view_duel'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training'),
     DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/view_challenge'),
@@ -123,15 +123,6 @@ class UILists {
         child: Text('Uygulamada bazı fonksiyonlar olması gerektiği gibi çalışmıyor')),
   ];
 
-  ///
-  static String twoRefAchievement = "2 ref";
-  static String fifteenRefAchievement = "15 ref";
-  static String eightHundredAchievement = "800 Recycled";
-  static String twoFeedbackAchievement = "At Least 2 Feedback";
-  static String threeWeeksAchievement = "3 Week 3 Times";
-  static String shareUsAchievement = "Share Us";
-
-  ///
   static List<ChallengeModel> challengeList = [
     ChallengeModel(
       challengeTitle: 'Merdivenleri Kullan',

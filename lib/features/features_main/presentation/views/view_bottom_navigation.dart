@@ -9,7 +9,7 @@ import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/lists.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
-import '../../../../core/UI/widgets/we_avatar.dart';
+import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../models/model_user.dart';
 import '../../../../providers/provider_user.dart';
@@ -79,7 +79,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
             ),
           IconButton(
             onPressed: () => vm.navigateTo('/view_profile'),
-            icon: WEAvatar(image: Provider.of<UserProvider>(context).currentUser.avatar, size: 35),
+            icon: GateZeroAvatar(image: Provider.of<UserProvider>(context).currentUser.avatar, size: 35),
           ),
           SizedBox(width: 10),
         ],
@@ -135,7 +135,8 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
               decoration: BoxDecoration(color: UIColors.primaryColor),
               child: Row(
                 children: [
-                  GestureDetector(onTap: () => vm.navigateTo('/view_profile'), child: WEAvatar(image: currentUser.avatar, size: 110)),
+                  GestureDetector(
+                      onTap: () => vm.navigateTo('/view_profile'), child: GateZeroAvatar(image: currentUser.avatar, size: 110)),
                   SizedBox(width: 20),
                   Expanded(
                     child: Column(

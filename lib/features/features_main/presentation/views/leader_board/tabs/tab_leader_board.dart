@@ -6,7 +6,7 @@ import '../../../../../../core/UI/shared/assets.dart';
 import '../../../../../../core/UI/shared/lists.dart';
 import '../../../../../../core/UI/widgets/pull_refresher.dart';
 import '../../../../../../core/UI/widgets/rounded_list_tile.dart';
-import '../../../../../../core/UI/widgets/we_avatar.dart';
+import '../../../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../view_models/leader_board/view_model_leader_board.dart';
 
 class LeaderBoardTab extends StatefulWidget {
@@ -35,7 +35,7 @@ class _LeaderBoardTabState extends State<LeaderBoardTab> {
         itemBuilder: (_, index) {
           return RoundedListTile(
             title: Text(vm.peopleList[index].name.toString()),
-            leading: WEAvatar(image: vm.peopleList[index].avatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
+            leading: GateZeroAvatar(image: vm.peopleList[index].avatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
             trailing: Image(
               image: AssetImage(index < 3 ? UILists.leaderBoardIcons[index] : UILists.leaderBoardIcons[3]),
               height: 48,

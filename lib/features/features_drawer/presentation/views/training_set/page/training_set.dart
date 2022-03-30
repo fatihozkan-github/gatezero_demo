@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../../../../core/UI/widgets/rounded_list_tile.dart';
-import '../../../../../../core/UI/widgets/we_spin.dart';
+import '../../../../../../core/UI/widgets/widget_loading.dart';
 import '../model/training_video.dart';
 import '../model/training_video_history.dart';
 import '../service/training_set_service.dart';
@@ -56,7 +56,7 @@ class _TrainingSetState extends State<TrainingSet> {
     return Scaffold(
       appBar: AppBar(title: Text('Eğitim Seti')),
       body: isLoading
-          ? WESpinKit()
+          ? LoadingWidget()
           : Column(
               children: [
                 YoutubePlayer(

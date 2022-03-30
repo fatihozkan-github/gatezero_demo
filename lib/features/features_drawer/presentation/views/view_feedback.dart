@@ -5,7 +5,7 @@ import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/lists.dart';
 import '../../../../core/UI/shared/utils.dart';
 import '../../../../core/UI/widgets/async_button.dart';
-import '../../../../core/UI/widgets/we_dropdown.dart';
+import '../../../../core/UI/widgets/gatezero_dropdown.dart';
 import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_constants.dart';
 import '../../../../core/utils/utilities_general.dart';
@@ -59,7 +59,7 @@ class _FeedbackViewState extends State<FeedbackView> {
 
   _getTextFields() => Column(
         children: [
-          WEDropdown(
+          GateZeroDropdown(
             value: _dropdownSubjectValue,
             items: UILists.feedbackSubjectDropdown,
             onChanged: _dropdownDetailValue != 'Seçilmedi' ? null : (index) => setState(() => _dropdownSubjectValue = index),
@@ -68,7 +68,7 @@ class _FeedbackViewState extends State<FeedbackView> {
           if (_dropdownSubjectValue != 'Diğer')
             Column(
               children: [
-                WEDropdown(
+                GateZeroDropdown(
                   value: _dropdownDetailValue,
                   items: UILists.feedbackAppDropdown,
                   onChanged: _dropdownSubjectValue == 'Seçilmedi' ? null : (index) => setState(() => _dropdownDetailValue = index),

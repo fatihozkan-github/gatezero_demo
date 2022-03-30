@@ -6,7 +6,7 @@ import 'package:lottie/lottie.dart';
 import '../../../../../../core/UI/shared/assets.dart';
 import '../../../../../../core/UI/shared/lists.dart';
 import '../../../../../../core/UI/widgets/rounded_list_tile.dart';
-import '../../../../../../core/UI/widgets/we_avatar.dart';
+import '../../../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../../../core/services/service_localization.dart';
 import '../../../../../../core/utils/utilities_arguments.dart';
 
@@ -34,7 +34,7 @@ class _FriendsTabState extends State<FriendsTab> {
                   Navigator.pushNamed(context, '/screen_other_profile',
                       arguments: OtherProfileScreenArgs(friendModel: friendsList[index]));
                 },
-                leading: WEAvatar(image: friendsList[index].avatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
+                leading: GateZeroAvatar(image: friendsList[index].avatar, fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon)),
                 title: Text(friendsList[index].name),
                 trailing: Image(
                   image: AssetImage(index < 3 ? UILists.leaderBoardIcons[index] : UILists.leaderBoardIcons[3]),

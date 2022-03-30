@@ -7,7 +7,7 @@ class OrDivider extends StatelessWidget {
   final String text;
   final double spaceAround;
   OrDivider({@required this.text, this.spaceAround = 0.0})
-      : assert(text != null, 'OrDivider without a text is meaningless. Consider to use a typical Divider');
+      : assert(text != null, 'OrDivider without a text is meaningless. Consider using a typical Divider');
 
   @override
   Widget build(BuildContext context) {
