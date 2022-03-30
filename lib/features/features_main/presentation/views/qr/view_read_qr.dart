@@ -57,10 +57,9 @@ class _ReadQRViewState extends State<ReadQRView> {
         leading: BackButton(color: UIColors.primaryColor),
         title: OverFlowHandler(child: Text('Ürünlerini Okut', style: TextStyle(color: UIColors.primaryColor))),
         actions: [
-          IconButton(
-            ///TODO
-            onPressed: () => {},
-            icon: Badge(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Badge(
               badgeColor: Colors.green,
               badgeContent: Text(vm.productList.length.toString(), style: TextStyle(color: Colors.white, fontSize: 10)),
               child: Icon(Icons.recycling_rounded, color: UIColors.primaryColor),

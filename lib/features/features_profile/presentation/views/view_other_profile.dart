@@ -9,10 +9,10 @@ import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/styles.dart';
 import '../../../../core/UI/shared/utils.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
+import '../../../../core/UI/widgets/widget_avatar_back_ground.dart';
 import '../../../../core/models/model_friend.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../core/models/model_user.dart';
-import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../providers/provider_user.dart';
 
 class OtherProfileView extends StatefulWidget {
@@ -34,7 +34,7 @@ class _OtherProfileViewState extends State<OtherProfileView> {
           body: ListView(
             physics: BouncingScrollPhysics(),
             children: [
-              _getProfilePic(widget.friendModel),
+              AvatarBackgroundWidget(image: widget.friendModel.avatar),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -59,20 +59,6 @@ class _OtherProfileViewState extends State<OtherProfileView> {
       },
     );
   }
-
-  Stack _getProfilePic(FriendModel friendData) => Stack(
-        alignment: Alignment.center,
-        children: [
-          /// TODO
-          // ClipRRect(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)), child: WEWave(heightFactor: 0.5)),
-          GateZeroAvatar(
-            image: friendData.avatar,
-            size: 190,
-            fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon, width: 190, height: 190),
-            polygonBorder: true,
-          ),
-        ],
-      );
 
   _getButtons(FriendModel friendModel, BaseViewModel vm) {
     UserProvider userProvider = Provider.of<UserProvider>(context, listen: true);

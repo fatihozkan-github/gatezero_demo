@@ -1,3 +1,4 @@
+import 'package:gatezero_demo/core/UI/widgets/widget_avatar_back_ground.dart';
 import 'package:lottie/lottie.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,6 @@ import '../../../../core/UI/shared/styles.dart';
 import '../../../../core/UI/widgets/or_divider.dart';
 import '../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
-import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../core/models/model_user.dart';
@@ -39,7 +39,7 @@ class _ProfileViewState extends State<ProfileView> {
           body: OverScroll(
             child: ListView(
               children: [
-                _getProfilePic(),
+                AvatarBackgroundWidget(image: _currentUser.avatar),
                 SizedBox(height: 20),
                 _getHeader(),
                 Padding(padding: EdgeInsets.all(8.0), child: _getDetailWidgets()),
@@ -74,35 +74,6 @@ class _ProfileViewState extends State<ProfileView> {
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () => vm.navigateTo('/view_search')),
           IconButton(icon: Icon(Icons.settings), onPressed: () => vm.navigateTo('/view_settings')),
-        ],
-      );
-
-  Stack _getProfilePic() => Stack(
-        alignment: Alignment.center,
-        children: [
-          Column(
-            children: [
-              SizedBox(height: 60),
-              Container(
-                height: 73.5,
-                child: RotatedBox(quarterTurns: 2, child: Lottie.asset('assets/gifs/wave.json')),
-                decoration: BoxDecoration(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0))),
-              ),
-              Container(
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Color(0xFF2872DD),
-                  borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)),
-                ),
-              ),
-            ],
-          ),
-          GateZeroAvatar(
-            size: 170,
-            polygonBorder: true,
-            image: _currentUser.avatar,
-            fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon, width: 170, height: 170),
-          ),
         ],
       );
 

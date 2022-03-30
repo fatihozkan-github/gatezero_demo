@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../features/features_main/data/models/model_post.dart';
 import '../features/features_main/data/models/model_story.dart';
 
-/// TODO: remove
 class FeedProvider extends ChangeNotifier {
   List<PostModel> postList = Mocks.mockPostList;
   List<StoryModel> storyList = Mocks.mockStoryList;
