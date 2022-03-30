@@ -32,8 +32,9 @@ class UILists {
   static List<DrawerItemModel> drawerItems = [
     DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/view_badges'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/view_duel'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training'),
-    DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/view_challenge'),
+    DrawerItemModel(
+        title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training_set'),
+    DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/view_challenges'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemInvite, icon: Icons.share_rounded, screen: '/view_invite'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemFeedback, icon: Icons.feedback_rounded, screen: '/view_feedback'),
   ];

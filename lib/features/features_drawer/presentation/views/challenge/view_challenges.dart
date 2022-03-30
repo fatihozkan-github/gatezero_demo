@@ -1,3 +1,5 @@
+import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
+import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
 import 'package:speech_balloon/speech_balloon.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -8,15 +10,15 @@ import '../../../../../core/UI/shared/lists.dart';
 import '../../../../../core/UI/shared/styles.dart';
 import '../../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../../core/UI/widgets/overflow_handler.dart';
-import '../../../../../core/utils/utilities_arguments.dart';
+import '../../../../../core/router/router.gr.dart';
 import '../../../data/models/model_challenge.dart';
 
-class ChallengeScreen extends StatefulWidget {
+class ChallengeView extends StatefulWidget {
   @override
-  State<ChallengeScreen> createState() => _ChallengeScreenState();
+  State<ChallengeView> createState() => _ChallengeViewState();
 }
 
-class _ChallengeScreenState extends State<ChallengeScreen> {
+class _ChallengeViewState extends State<ChallengeView> {
   int _currentChallengeStep = 0;
   List<int> _right = [2, 6, 10];
 
@@ -27,9 +29,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
         Duration(milliseconds: 500),
         () async {
           int _currentStep = 1;
-          // bool _isCompleted = false;
-          // if (_isCompleted) HiveService.setChallengeStep(value: _currentStep + 1);
-          setState(() => _currentStep);
+          setState(() => _currentChallengeStep = _currentStep);
         },
       );
     });
@@ -39,40 +39,45 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(title: OverFlowHandler(child: Text('Meydan Okuma'))),
-      body: OverScroll(
-        child: ListView(
-          children: [
-            Image.asset(UIAssets.challengeTopImage, fit: BoxFit.fitWidth),
-            Stack(
-              alignment: Alignment.topCenter,
+    return BaseView(
+      model: BaseViewModel(),
+      builder: (_, vm, __) {
+        return Scaffold(
+          appBar: AppBar(title: OverFlowHandler(child: Text('Meydan Okuma'))),
+          body: OverScroll(
+            child: ListView(
               children: [
-                Image.asset(UIAssets.challengeBodyImage, fit: BoxFit.fitWidth),
-                for (ChallengeModel challenge in UILists.challengeList)
-                  _getBalloons(width, UILists.challengeList.indexOf(challenge) + 1, challenge),
-                for (int i = 6; i <= 11; i++) _getPlaceholders(width, i),
-                AnimatedPositioned(
-                  duration: Duration(seconds: 2),
-                  child: Image.asset(UIAssets.challengeHeroIcon, width: width / 10),
-                  left: _currentChallengeStep.isOdd
-                      ? width / 2 - 35
-                      : _right.contains(_currentChallengeStep)
-                          ? width - (width / 10) - 40
-                          : 40,
-                  top: _currentChallengeStep.isOdd
-                      ? (_currentChallengeStep * width / 9) - (width / 13) + 25
-                      : (_currentChallengeStep * width / 8.8),
+                Image.asset(UIAssets.challengeTopImage, fit: BoxFit.fitWidth),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Image.asset(UIAssets.challengeBodyImage, fit: BoxFit.fitWidth),
+                    for (ChallengeModel challenge in UILists.challengeList)
+                      _getBalloons(width, UILists.challengeList.indexOf(challenge) + 1, challenge, vm),
+                    for (int i = 6; i <= 11; i++) _getPlaceholders(width, i),
+                    AnimatedPositioned(
+                      duration: Duration(seconds: 2),
+                      child: Image.asset(UIAssets.challengeHeroIcon, width: width / 10),
+                      left: _currentChallengeStep.isOdd
+                          ? width / 2 - 35
+                          : _right.contains(_currentChallengeStep)
+                              ? width - (width / 10) - 40
+                              : 40,
+                      top: _currentChallengeStep.isOdd
+                          ? (_currentChallengeStep * width / 9) - (width / 13) + 25
+                          : (_currentChallengeStep * width / 8.8),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
-  _getBalloons(double width, int index, ChallengeModel challengeModel) {
+  _getBalloons(double width, int index, ChallengeModel challengeModel, vm) {
     double _size = width / 10;
     List<int> _right = [2, 6, 10];
     return Positioned(
@@ -84,7 +89,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
       right: _right.contains(index) ? 10 : null,
       top: index.isOdd ? (index * width / 9) - (width / 13) : (index * width / 8.8),
       child: GestureDetector(
-        onTap: () => _getBottomSheet(context, challengeModel),
+        onTap: () => _getBottomSheet(context, challengeModel, vm),
         child: SpeechBalloon(
           width: _size,
           height: _size,
@@ -131,7 +136,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
     );
   }
 
-  _getBottomSheet(context, ChallengeModel challengeData) {
+  _getBottomSheet(context, ChallengeModel challengeData, BaseViewModel vm) {
     return showModalBottomSheet(
       context: context,
       clipBehavior: Clip.antiAlias,
@@ -171,11 +176,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                           ElevatedButton(
                             child: Text('Kabul!'),
                             onPressed: _currentChallengeStep == UILists.challengeList.indexOf(challengeData) + 1
-                                ? () => Navigator.pushNamed(
-                                      context,
-                                      '/screen_challenge_detail',
-                                      arguments: ChallengeDetailScreenArgs(challengeData: challengeData),
-                                    )
+                                ? () => vm.appRouter.push(ChallengeDetailViewRoute(challengeData: challengeData))
                                 : null,
                           ),
                         ],

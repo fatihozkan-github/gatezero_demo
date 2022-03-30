@@ -11,6 +11,8 @@ class BaseViewModel extends ChangeNotifier {
   ActivityState _activityState = ActivityState.isLoaded;
   AppRouter _appRouter = GetIt.I<AppRouter>();
 
+  AppRouter get appRouter => _appRouter;
+
   get activityState => _activityState;
 
   set activityState(ActivityState activityState) {
@@ -20,11 +22,11 @@ class BaseViewModel extends ChangeNotifier {
 
   void navigateTo(String path, {RouterAction action, var result}) {
     switch (action) {
-      case RouterAction.popAndPush:
+      case RouterAction.popAndPushNamed:
         _appRouter.pop();
         _appRouter.pushNamed(path);
         break;
-      case RouterAction.pushAndRemove:
+      case RouterAction.pushNamedAndRemove:
         _appRouter.replaceNamed(path);
         break;
       case RouterAction.pop:

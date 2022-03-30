@@ -1,69 +1,72 @@
-import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/UI/presentation/view_base.dart';
+import '../../../../core/UI/presentation/view_model_base.dart';
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/styles.dart';
 import '../../../../core/UI/shared/utils.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
-import '../../../../core/utils/utilities_arguments.dart';
+import '../../../../core/models/model_friend.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../core/models/model_user.dart';
 import '../../../../core/UI/widgets/gatezero_avatar.dart';
+import '../../../../providers/provider_user.dart';
 
 class OtherProfileView extends StatefulWidget {
+  final FriendModel friendModel;
+  OtherProfileView({this.friendModel});
   @override
   _OtherProfileViewState createState() => _OtherProfileViewState();
 }
 
 class _OtherProfileViewState extends State<OtherProfileView> {
-  OtherProfileScreenArgs args = OtherProfileScreenArgs();
-
-  @override
-  void didChangeDependencies() async {
-    args = ModalRoute.of(context).settings.arguments as OtherProfileScreenArgs;
-    super.didChangeDependencies();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: UIColors.tertiaryColor,
-      appBar: AppBar(title: OverFlowHandler(child: Text(args.friendModel.name.toString()))),
-      body: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          _getProfilePic(args),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return BaseView(
+      model: BaseViewModel(),
+      builder: (_, BaseViewModel vm, __) {
+        return Scaffold(
+          backgroundColor: UIColors.tertiaryColor,
+          appBar: AppBar(title: OverFlowHandler(child: Text(widget.friendModel.name.toString()))),
+          body: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
-              Text(
-                GeneralUtils.hasData(args.friendModel.superhero) ? args.friendModel.superhero + ' | ' : '',
-                style: UIStyles.titleStyle,
+              _getProfilePic(widget.friendModel),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    GeneralUtils.hasData(widget.friendModel.superhero) ? widget.friendModel.superhero + ' | ' : '',
+                    style: UIStyles.titleStyle,
+                  ),
+                  Text(
+                    'Level ' + widget.friendModel.level.toString() == 'Level 0'
+                        ? 'Level 1'
+                        : 'Level ' + widget.friendModel.level.toString(),
+                    style: UIStyles.titleStyle,
+                  ),
+                ],
               ),
-              Text(
-                'Level ' + args.friendModel.level.toString() == 'Level 0' ? 'Level 1' : 'Level ' + args.friendModel.level.toString(),
-                style: UIStyles.titleStyle,
-              ),
+              Padding(padding: EdgeInsets.all(8.0), child: _getDetailWidgets(widget.friendModel)),
+              _getButtons(widget.friendModel, vm),
             ],
           ),
-          Padding(padding: EdgeInsets.all(8.0), child: _getDetailWidgets(args)),
-          _getButtons(args),
-        ],
-      ),
+        );
+      },
     );
   }
 
-  Stack _getProfilePic(OtherProfileScreenArgs args) => Stack(
+  Stack _getProfilePic(FriendModel friendData) => Stack(
         alignment: Alignment.center,
         children: [
           /// TODO
           // ClipRRect(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)), child: WEWave(heightFactor: 0.5)),
           GateZeroAvatar(
-            image: args.friendModel.avatar,
+            image: friendData.avatar,
             size: 190,
             fallBackImage: Image.asset(UIAssets.leaderBoardUserIcon, width: 190, height: 190),
             polygonBorder: true,
@@ -71,16 +74,16 @@ class _OtherProfileViewState extends State<OtherProfileView> {
         ],
       );
 
-  _getButtons(args) {
+  _getButtons(FriendModel friendModel, BaseViewModel vm) {
     UserProvider userProvider = Provider.of<UserProvider>(context, listen: true);
     UserModel _currentUser = userProvider.currentUser;
-    return (args.friendModel.id != _currentUser.uID)
+    return (friendModel.id != _currentUser.uID)
         ? Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(),
-              _currentUser.friends.contains(args.friendModel)
+              _currentUser.friends.contains(friendModel)
                   ? OutlinedButton.icon(
                       icon: Icon(Icons.check_rounded, color: UIColors.primaryColor),
                       label: Text("ARKADAŞSINIZ",
@@ -92,13 +95,13 @@ class _OtherProfileViewState extends State<OtherProfileView> {
                       label: Text("ARKADAŞ EKLE",
                           textAlign: TextAlign.center, style: TextStyle(color: UIColors.primaryColor, fontSize: 15)),
                       onPressed: () async {
-                        userProvider.addFriend(args.friendModel);
+                        userProvider.addFriend(friendModel);
                         print(userProvider.currentUser.friends);
                         setState(() {});
                       },
                     ),
               SizedBox(height: 30),
-              _currentUser.friends.contains(args.friendModel)
+              _currentUser.friends.contains(friendModel)
                   ? Stack(
                       alignment: Alignment.topCenter,
                       children: [
@@ -130,22 +133,19 @@ class _OtherProfileViewState extends State<OtherProfileView> {
               ),
               SizedBox(height: 15),
               Center(
-                child: ElevatedButton(
-                  child: Text('Meydan Okumalar'),
-                  onPressed: () => Navigator.pushNamed(context, '/screen_challenge'),
-                ),
+                child: ElevatedButton(child: Text('Meydan Okumalar'), onPressed: () => vm.navigateTo('/view_challenges')),
               ),
             ],
           );
   }
 
-  _getDetailWidgets(OtherProfileScreenArgs args) => GridView(
+  _getDetailWidgets(FriendModel friendData) => GridView(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: [
-          _getDetailWidget("${args.friendModel.coins ?? 0}", "WE Coin", UIAssets.coinIcon),
-          _getDetailWidget("${args.friendModel.recycled ?? 0} g", "Dönüştürüldü", UIAssets.recycleSignIcon),
+          _getDetailWidget("${friendData.coins ?? 0}", "WE Coin", UIAssets.coinIcon),
+          _getDetailWidget("${friendData.recycled ?? 0} g", "Dönüştürüldü", UIAssets.recycleSignIcon),
         ],
       );
 

@@ -37,7 +37,7 @@ class _FeedViewState extends State<FeedView> {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: () => vm.navigateTo('/view_story'),
+                          onTap: () => vm.navigateTo('/view_new_story'),
                           child: Icon(Icons.add_circle_rounded, size: 70, color: UIColors.primaryColor),
                         ),
                         Text('Hikaye ekle'),

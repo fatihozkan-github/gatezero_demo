@@ -1,7 +1,12 @@
-import 'package:gatezero_demo/providers/provider_user.dart';
+import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
 import 'package:provider/provider.dart';
 
-import '../model/training_video_history.dart';
+import '../../../../providers/provider_user.dart';
+import '../../data/models/training_video_history.dart';
+
+class TrainingSetViewModel extends BaseViewModel {
+  ///
+}
 
 class TrainingSetService {
   static Future<List<TrainingVideoHistory>> getUserTrainingVideoHistory() async {

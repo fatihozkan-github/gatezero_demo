@@ -13,7 +13,6 @@ import 'dart:async';
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/widgets/rounded_text_field.dart';
-import '../../../../core/utils/utilities_arguments.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../data/models/model_comment.dart';
 import '../../data/models/model_post.dart';
@@ -80,19 +79,7 @@ class _PostWidgetState extends State<PostWidget> with SingleTickerProviderStateM
       child: Column(
         children: <Widget>[
           ListTile(
-            leading: TextButton(
-              child: GateZeroAvatar(image: widget.postModel.publisherAvatar, fallBackImage: Image.asset(UIAssets.generalLogo)),
-              style: TextButton.styleFrom(padding: EdgeInsets.all(6.0), shape: CircleBorder()),
-              onPressed: () {
-                if (GeneralUtils.hasData(widget.postModel.publisherID)) {
-                  Navigator.pushNamed(
-                    context,
-                    '/screen_other_profile',
-                    arguments: OtherProfileScreenArgs(friendID: widget.postModel.publisherID),
-                  );
-                }
-              },
-            ),
+            leading: GateZeroAvatar(image: widget.postModel.publisherAvatar, fallBackImage: Image.asset(UIAssets.generalLogo)),
             title: Text(widget.postModel.publisherName ?? '', style: TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Text(GeneralUtils.getReadableDate()),
           ),

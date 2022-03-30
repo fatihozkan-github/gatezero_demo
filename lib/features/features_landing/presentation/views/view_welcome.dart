@@ -22,10 +22,13 @@ class WelcomeView extends StatelessWidget {
                 Text(LocalizationService.texts.welcomePageTitle)
                     .textStyle(TextStyle(fontWeight: FontWeight.bold, color: UIColors.primaryColor, fontSize: 32))
                     .textAlignment(TextAlign.center),
-                Image.asset(UIAssets.generalLogo).padding(vertical: 50.0).width(200).height(200),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 50.0),
+                  child: Image.asset(UIAssets.generalLogo, height: 200),
+                ),
                 RoundedButton(
                   text: 'HADİ BAŞLAYALIM!',
-                  onPressed: () => _vm.navigateTo('/view_bottom_navigation', action: RouterAction.pushAndRemove),
+                  onPressed: () => _vm.navigateTo('/view_bottom_navigation', action: RouterAction.pushNamedAndRemove),
                 ),
                 SizedBox(height: 10),
               ],

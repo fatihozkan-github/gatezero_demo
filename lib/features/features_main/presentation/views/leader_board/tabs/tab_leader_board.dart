@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:gatezero_demo/core/router/router.gr.dart';
 
 import '../../../../../../core/UI/presentation/view_base.dart';
 import '../../../../../../core/UI/shared/assets.dart';
@@ -19,13 +19,7 @@ class _LeaderBoardTabState extends State<LeaderBoardTab> {
   Widget build(BuildContext context) => BaseView(
         model: LeaderBoardViewModel(),
         builder: (_, LeaderBoardViewModel vm, __) {
-          return Scaffold(
-            body: PullRefresher(
-              child: _getBody(vm),
-              refreshFunction: vm.onRefresh,
-              loadingFunction: vm.onLoading,
-            ),
-          );
+          return Scaffold(body: PullRefresher(child: _getBody(vm), refreshFunction: vm.onRefresh, loadingFunction: vm.onLoading));
         },
       );
 
@@ -42,9 +36,7 @@ class _LeaderBoardTabState extends State<LeaderBoardTab> {
               width: 48,
               fit: BoxFit.cover,
             ),
-            onPressed: () => vm.navigateTo('/view_other_profile'),
-            // Navigator.pushNamed(context, '/screen_other_profile',
-            // arguments: OtherProfileScreenArgs(friendModel: vm.peopleList[index])),
+            onPressed: () => vm.appRouter.push(OtherProfileViewRoute(friendModel: vm.peopleList[index])),
           );
         },
       );

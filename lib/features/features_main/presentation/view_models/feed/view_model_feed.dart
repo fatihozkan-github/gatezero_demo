@@ -24,7 +24,6 @@ class FeedViewModel extends BaseViewModel {
   }
 }
 
-// /// TODO: change setup
 class MockFeedService {
   static getStories() => Mocks.mockStoryList;
   static getPosts() => Mocks.mockPostList;

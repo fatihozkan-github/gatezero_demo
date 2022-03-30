@@ -5,7 +5,7 @@ import '../../../../../core/models/model_friend.dart';
 class LeaderBoardViewModel extends BaseViewModel {
   List<FriendModel> _people = Mocks.mockUserList;
 
-  get peopleList => _people;
+  List<FriendModel> get peopleList => _people;
 
   /// • Add certain valued posts to [_posts]
   onRefresh({refreshRequest = true}) async => await Future.delayed(Duration(milliseconds: 1000));

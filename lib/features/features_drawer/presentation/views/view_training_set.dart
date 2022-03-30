@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../../../../../../core/UI/widgets/rounded_list_tile.dart';
-import '../../../../../../core/UI/widgets/widget_loading.dart';
-import '../model/training_video.dart';
-import '../model/training_video_history.dart';
-import '../service/training_set_service.dart';
 
-class TrainingSet extends StatefulWidget {
+import '../../../../core/UI/widgets/rounded_list_tile.dart';
+import '../../../../core/UI/widgets/widget_loading.dart';
+import '../../data/models/training_video.dart';
+import '../../data/models/training_video_history.dart';
+import '../view_models/view_model_training_set.dart';
+
+/// TODO: Revise
+class TrainingSetView extends StatefulWidget {
   @override
   _TrainingSetState createState() => _TrainingSetState();
 }
 
-class _TrainingSetState extends State<TrainingSet> {
+class _TrainingSetState extends State<TrainingSetView> {
   List<TrainingVideoHistory> userVideoHistory = [];
   YoutubePlayerController _controller;
   List<TrainingVideo> allVideos = [

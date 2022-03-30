@@ -16,6 +16,7 @@ class RoundedListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       margin: EdgeInsets.all(5.0),
       shadowColor: Colors.orange,
       elevation: 2,
@@ -26,8 +27,8 @@ class RoundedListTile extends StatelessWidget {
           leading: leading,
           trailing: trailing,
           subtitle: subTitle,
-        ).padding(all: 4.0).borderRadius(all: 20.0),
+        ).padding(all: 4.0),
       ),
-    ).borderRadius(all: 20.0);
+    );
   }
 }
