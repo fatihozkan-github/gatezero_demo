@@ -40,10 +40,8 @@ class RoundedButton extends StatelessWidget {
     return Container(
         constraints: constraints,
         margin: margin ?? EdgeInsets.zero,
-        // decoration: BoxDecoration(
-        //   borderRadius: borderRadius ?? BorderRadius.circular(20),
-        //   gradient: showGradient ? gradient ?? LinearGradient(colors: [UIColors.secondaryColor, UIColors.primaryColor]) : null,
-        // ),
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(borderRadius: borderRadius ?? BorderRadius.circular(20)),
         child: TextButton(
           onPressed: onPressed,
           child: useCustomChild ? customChild : Text(text, style: TextStyle(color: textColor)),
@@ -54,9 +52,7 @@ class RoundedButton extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(showGradient ? Colors.transparent : color),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: borderRadius ?? BorderRadius.circular(20))),
               ),
-        )
-            .backgroundGradient(
-                showGradient ? gradient ?? LinearGradient(colors: [UIColors.secondaryColor, UIColors.primaryColor]) : null)
-            .borderRadius(all: borderRadius ?? 20));
+        ).backgroundGradient(
+            showGradient ? gradient ?? LinearGradient(colors: [UIColors.secondaryColor, UIColors.primaryColor]) : null));
   }
 }

@@ -30,16 +30,12 @@ class UILists {
   ];
 
   static List<DrawerItemModel> drawerItems = [
-    DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/screen_badge'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/screen_duel'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/screen_training'),
-    DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/screen_challenge'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemInvite, icon: Icons.share_rounded, screen: '/screen_invite'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemFeedback, icon: Icons.feedback_rounded, screen: '/screen_feedback'),
-    // DrawerItemModel(title: LocalizationService.texts.drawerItemFAQ, icon: Icons.help, screen: '/screen_faq'),
-    // DrawerItem(title: 'Challenge', icon: FlutterRemix.sword_fill, screen: '/screen_invite'),
-    // DrawerItem(title: 'Bağlantı Hızı', icon: Icons.network_check_rounded, screen: '/screen_connection'),
-    // DrawerItem(title: 'Bildirimler', icon: Icons.notifications_rounded),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/view_badge'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/view_duel'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training'),
+    DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/view_challenge'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemInvite, icon: Icons.share_rounded, screen: '/view_invite'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemFeedback, icon: Icons.feedback_rounded, screen: '/view_feedback'),
   ];
 
   static List<String> qrPageInstructions = [

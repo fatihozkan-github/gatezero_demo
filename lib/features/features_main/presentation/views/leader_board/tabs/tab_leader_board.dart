@@ -17,7 +17,7 @@ class LeaderBoardTab extends StatefulWidget {
 class _LeaderBoardTabState extends State<LeaderBoardTab> {
   @override
   Widget build(BuildContext context) => BaseView(
-        model: context.watch<LeaderBoardViewModel>(),
+        model: LeaderBoardViewModel(),
         builder: (_, LeaderBoardViewModel vm, __) {
           return Scaffold(
             body: PullRefresher(

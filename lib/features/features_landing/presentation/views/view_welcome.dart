@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
 import 'package:gatezero_demo/core/utils/utilities_enums.dart';
-import 'package:provider/provider.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../../../core/UI/shared/assets.dart';
@@ -14,7 +13,7 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView(
-        model: context.watch<LandingViewModel>(),
+        model: LandingViewModel(),
         builder: (_, LandingViewModel _vm, __) {
           return Scaffold(
             body: ListView(

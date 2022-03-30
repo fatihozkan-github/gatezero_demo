@@ -1,7 +1,6 @@
 import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../../../core/UI/presentation/view_base.dart';
@@ -46,7 +45,7 @@ class _LandingViewState extends State<LandingView> {
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      model: context.watch<LandingViewModel>(),
+      model: LandingViewModel(),
       builder: (_, LandingViewModel _vm, __) {
         return Scaffold(
           body: ConcentricPageView(

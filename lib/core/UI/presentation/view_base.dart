@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends ChangeNotifier> extends StatelessWidget {
