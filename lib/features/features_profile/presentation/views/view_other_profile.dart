@@ -29,7 +29,7 @@ class _OtherProfileViewState extends State<OtherProfileView> {
       model: BaseViewModel(),
       builder: (_, BaseViewModel vm, __) {
         return Scaffold(
-          backgroundColor: UIColors.tertiaryColor,
+          backgroundColor: Colors.white,
           appBar: AppBar(title: OverFlowHandler(child: Text(widget.friendModel.name.toString()))),
           body: ListView(
             physics: BouncingScrollPhysics(),

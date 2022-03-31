@@ -87,7 +87,7 @@ class _ReadQRViewState extends State<ReadQRView> {
             _QRController = controller;
             controller.scannedDataStream.listen((Barcode scanData) async {
               // print(scanData.code);
-              if (!vm.productList.contains(scanData.code)) vm.addProduct(scanData.code);
+              if (!vm.productList.contains(scanData.code)) vm.addProduct(scanData.code, context);
             });
           },
           overlay: QrScannerOverlayShape(

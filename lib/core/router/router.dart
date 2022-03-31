@@ -5,7 +5,9 @@ import 'package:gatezero_demo/features/features_drawer/presentation/views/duels/
 import 'package:gatezero_demo/features/features_drawer/presentation/views/view_training_set.dart';
 import 'package:gatezero_demo/features/features_main/presentation/views/feed/screen_share_story.dart';
 import 'package:gatezero_demo/features/features_main/presentation/views/feed/view_feed.dart';
+import 'package:gatezero_demo/features/features_main/presentation/views/qr/view_calculation.dart';
 import 'package:gatezero_demo/features/features_profile/presentation/views/view_other_profile.dart';
+import 'package:gatezero_demo/features/features_profile/presentation/views/view_statistics.dart';
 
 import '../../features/features_drawer/presentation/views/challenge/view_challenge_share.dart';
 import '../../features/features_drawer/presentation/views/view_badge.dart';
@@ -42,6 +44,8 @@ import '../../features/features_profile/presentation/views/view_settings.dart';
     AutoRoute(page: CustomQRView, path: "/view_custom_qr"),
     AutoRoute(page: ReadQRView, path: "/view_read_qr"),
     AutoRoute(page: CustomARView, path: "/view_custom_ar"),
+    AutoRoute(page: CalculationView, path: "/view_calculation"),
+    AutoRoute(page: StatisticsView, path: "/view_statistics"),
 
     /// Drawer
     AutoRoute(page: BadgesView, path: "/view_badges"),

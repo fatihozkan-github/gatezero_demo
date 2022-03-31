@@ -1,3 +1,4 @@
+import 'package:gatezero_demo/providers/provider_interaction.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -20,5 +21,6 @@ class Initials {
     ChangeNotifierProvider(create: (context) => BaseViewModel()),
     ChangeNotifierProvider(create: (context) => UserProvider()),
     ChangeNotifierProvider(create: (context) => FeedProvider()),
+    ChangeNotifierProvider(create: (context) => InteractionProvider()),
   ];
 }

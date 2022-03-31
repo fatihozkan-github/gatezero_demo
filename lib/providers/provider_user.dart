@@ -4,6 +4,7 @@ import '../core/models/model_friend.dart';
 import '../core/models/model_user.dart';
 
 class UserProvider extends ChangeNotifier {
+  getRewards() {}
   UserModel currentUser = UserModel(
     uID: "0",
     name: "Aysu Keçeci",

@@ -9,6 +9,8 @@ import 'package:ar_flutter_plugin/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin/ar_flutter_plugin.dart';
 import 'package:ar_flutter_plugin/models/ar_anchor.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
+import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
+import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -51,29 +53,31 @@ class _CustomARViewState extends State<CustomARView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Kutuyu Tanıt!')),
-      body: Stack(
-        children: [
-          ARView(onARViewCreated: onARViewCreated, planeDetectionConfig: PlaneDetectionConfig.horizontal),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(onPressed: onRemoveEverything, child: const Text("Temizle")),
-                  ElevatedButton(
-                    onPressed: () => Navigator.popAndPushNamed(context, '/screen_calculation'),
-                    child: const Text("Devam Et"),
+    return BaseView(
+      model: BaseViewModel(),
+      builder: (_, BaseViewModel vm, __) {
+        return Scaffold(
+          appBar: AppBar(title: const Text('Kutuyu Tanıt!')),
+          body: Stack(
+            children: [
+              ARView(onARViewCreated: onARViewCreated, planeDetectionConfig: PlaneDetectionConfig.horizontal),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(onPressed: onRemoveEverything, child: const Text("Temizle")),
+                      ElevatedButton(onPressed: () => vm.navigateTo('/view_calculation'), child: const Text("Devam Et")),
+                    ],
                   ),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 

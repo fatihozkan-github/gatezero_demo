@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:gatezero_demo/core/utils/utilities_enums.dart';
+import 'package:gatezero_demo/providers/provider_interaction.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../core/UI/presentation/view_model_base.dart';
 import '../../../../../core/services/service_permission.dart';
@@ -29,8 +32,10 @@ class ReadQRViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void addProduct(String value) {
+  void addProduct(String value, BuildContext context) {
     _productList.add(value);
+    if (!Provider.of<InteractionProvider>(context, listen: false).recycleList.contains(value))
+      Provider.of<InteractionProvider>(context, listen: false).addMaterial(value);
     notifyListeners();
   }
 }

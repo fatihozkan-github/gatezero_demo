@@ -53,11 +53,6 @@ class _ProfileViewState extends State<ProfileView> {
                 SizedBox(height: 10),
                 OrDivider(text: LocalizationService.texts.drawerItemBadges),
                 _getFooter(vm),
-                Lottie.asset(UIAssets.chartsGif),
-                Center(
-                  child: ElevatedButton(child: Text("Meraklısına İstatistikler"), onPressed: () => vm.navigateTo('/view_statistics')),
-                ),
-                SizedBox(height: 20),
               ],
             ),
           ),
