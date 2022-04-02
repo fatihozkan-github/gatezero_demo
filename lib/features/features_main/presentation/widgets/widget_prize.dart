@@ -1,8 +1,9 @@
 import 'package:coupon_uikit/coupon_uikit.dart';
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../core/services/service_localization.dart';
+import '../../../../providers/provider_user.dart';
 import 'gatezero_coin.dart';
 import '../../../../core/UI/shared/utils.dart';
 import '../../data/models/model_prize.dart';
@@ -63,13 +64,13 @@ class PrizeWidget extends StatelessWidget {
                 ],
               ),
               ElevatedButton(
-                child: Text('Çekilişe Katıl'),
+                child: Text(LocalizationService.texts.joinTheDraw),
                 onPressed: () async {
                   if (userModel.coins >= prizeModel.cost) {
                     Provider.of<UserProvider>(context, listen: false).updateCoin(-prizeModel.cost);
-                    UIUtils.showToast('Çekilişe katılma başarılı, bol şans!', success: true);
+                    UIUtils.showToast(LocalizationService.texts.joinTheDrawSuccess, success: true);
                   } else if (userModel.coins < prizeModel.cost) {
-                    UIUtils.showToast('Yeterli WE Coine sahip değilsin!', success: false);
+                    UIUtils.showToast(LocalizationService.texts.joinTheDrawFailure, success: false);
                   }
                 },
               ),

@@ -1,8 +1,7 @@
-import 'package:gatezero_demo/features/features_main/data/models/model_comment.dart';
-import 'package:gatezero_demo/features/features_main/data/models/model_prize.dart';
-import 'package:gatezero_demo/features/features_main/data/models/model_story.dart';
-import 'package:gatezero_demo/features/features_main/data/models/model_post.dart';
-
+import '../../../features/features_main/data/models/model_comment.dart';
+import '../../../features/features_main/data/models/model_post.dart';
+import '../../../features/features_main/data/models/model_prize.dart';
+import '../../../features/features_main/data/models/model_story.dart';
 import '../../models/model_friend.dart';
 import 'assets.dart';
 
@@ -35,23 +34,23 @@ class Mocks {
       id: "bTUGJgapq4qbpxYbRkbT",
       cost: 50,
       photo: amazonImage,
-      title: "Amazon'dan 50 TL hediye çeki!",
+      title: "50 TL gift card from Amazon!",
       subTitle:
-          "Bu çekilişe katılarak amazon.com.tr den yapacağın alışverişlerde kullanabileceğin 50 TL değerinde çek kazanabilirsin.",
+          "By participating in this lottery, you can win a check worth 50 TL that you can use for your purchases on amazon.com.tr.",
     ),
     PrizeModel(
       id: "f5KJO9zuBieF8DVVGxNg",
       cost: 500,
       photo: wwfImage,
       title: "WWF T-shirt",
-      subTitle: "Bu çekilişe katılarak WWF marketten  istediğin bir T-shirt hediye kazanma şansını yakala.",
+      subTitle: "Get a chance to win a T-shirt gift from the WWF market by participating in this giveaway.",
     ),
     PrizeModel(
       id: "V6GfZSZdWFzVRs2vktal",
       cost: 5000,
       photo: givinImage,
-      title: "Givin'den sweatshirt",
-      subTitle: "Bu çekilişe katılarak givinden istediğin bir sweatshirt'ü kazanma şansını yakala.",
+      title: "Sweatshirt from Givin",
+      subTitle: "Get a chance to win any sweatshirt you want from givin by participating in this giveaway.",
     ),
   ];
 
@@ -165,7 +164,7 @@ class Mocks {
       publisherName: "Fatih Özkan",
       timeStamp: DateTime.now().toString(),
       likers: [],
-      comments: {"0": CommentModel(uID: "0", comment: "Kolaydı.", timeStamp: DateTime.now().toString(), author: mockUserList[1])},
+      comments: {"0": CommentModel(uID: "0", comment: "Easy.", timeStamp: DateTime.now().toString(), author: mockUserList[1])},
     ),
     PostModel(
       id: "2",

@@ -22,12 +22,6 @@ class CommentView extends StatefulWidget {
 
 class _CommentViewState extends State<CommentView> {
   @override
-  void initState() {
-    // _getData();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     UserModel _currentUser = Provider.of<UserProvider>(context, listen: true).currentUser;
     return RoundedListTile(
@@ -45,7 +39,7 @@ class _CommentViewState extends State<CommentView> {
           ),
           if (_currentUser.uID == widget.commentModel.author.id)
             GestureDetector(
-              child: Text('Yorumumu Sil', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.red)),
+              child: Text('Delete', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.red)),
               onTap: () async {
                 await Provider.of<FeedProvider>(context, listen: false)
                     .removeComment(postModel: widget.postModel, commentModel: widget.commentModel);

@@ -1,5 +1,3 @@
-import 'package:gatezero_demo/core/UI/widgets/widget_avatar_back_ground.dart';
-import 'package:lottie/lottie.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +10,7 @@ import '../../../../core/UI/shared/styles.dart';
 import '../../../../core/UI/widgets/or_divider.dart';
 import '../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
+import '../../../../core/UI/widgets/widget_avatar_back_ground.dart';
 import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../core/models/model_user.dart';
@@ -46,7 +45,7 @@ class _ProfileViewState extends State<ProfileView> {
                 Center(
                   child: ElevatedButton.icon(
                     icon: Icon(Icons.share_rounded),
-                    label: Text('Paylaş!'),
+                    label: Text(LocalizationService.texts.shareButtonText),
                     onPressed: () async => vm.shareScreenshot(_ssController),
                   ),
                 ),
@@ -86,7 +85,10 @@ class _ProfileViewState extends State<ProfileView> {
           Icon(Icons.eco_rounded, color: Colors.green, size: 60),
           SizedBox(height: 10),
           OverFlowHandler(child: Text(_currentUser.calculateFootPrint(), style: UIStyles.titleStyle)),
-          FittedBox(fit: BoxFit.cover, child: Padding(padding: EdgeInsets.all(8.0), child: Text('Karbon ayak izi'))),
+          FittedBox(
+            fit: BoxFit.cover,
+            child: Padding(padding: EdgeInsets.all(8.0), child: Text(LocalizationService.texts.carbonFootprint)),
+          ),
         ],
       );
 
@@ -99,9 +101,11 @@ class _ProfileViewState extends State<ProfileView> {
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             children: [
-              _getDetailWidget("${_currentUser.coins ?? 0}", "Z-score Kazanıldı", UIAssets.coinIcon),
-              _getDetailWidget("${_currentUser.recycled ?? 0} g", "Dönüştürüldü", UIAssets.recycleSignIcon),
-              _getDetailWidget("${_currentUser.calculateImpact() ?? 0} Wh", "Etki Edildi", UIAssets.renewableEnergyIcon),
+              _getDetailWidget("${_currentUser.coins ?? 0}", LocalizationService.texts.friendProfileTotalCoin, UIAssets.coinIcon),
+              _getDetailWidget(
+                  "${_currentUser.recycled ?? 0} g", LocalizationService.texts.friendProfileRecycled, UIAssets.recycleSignIcon),
+              _getDetailWidget(
+                  "${_currentUser.calculateImpact() ?? 0} Wh", LocalizationService.texts.impacted, UIAssets.renewableEnergyIcon),
               _getImpact(),
             ],
           ),

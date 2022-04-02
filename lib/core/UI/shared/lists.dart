@@ -34,7 +34,8 @@ class UILists {
     DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/view_duel'),
     DrawerItemModel(
         title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training_set'),
-    DrawerItemModel(title: 'Meydan Okuma', icon: Icons.directions_walk_rounded, screen: '/view_challenges'),
+    DrawerItemModel(
+        title: LocalizationService.texts.drawerItemChallenges, icon: Icons.directions_walk_rounded, screen: '/view_challenges'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemInvite, icon: Icons.share_rounded, screen: '/view_invite'),
     DrawerItemModel(title: LocalizationService.texts.drawerItemFeedback, icon: Icons.feedback_rounded, screen: '/view_feedback'),
   ];
@@ -94,77 +95,129 @@ class UILists {
     Constants.SWEET_MATRIX
   ];
 
-  static List<DropdownMenuItem<String>> companyDropdownItems = [
-    DropdownMenuItem(value: 'Seçilmedi', child: Text('Seçilmedi')),
-    DropdownMenuItem(value: 'WE', child: Text('WE')),
-    DropdownMenuItem(value: 'BORUSAN', child: Text('BORUSAN')),
-    DropdownMenuItem(value: 'FORD', child: Text('FORD')),
-    DropdownMenuItem(value: 'DİĞER', child: Text('DİĞER')),
-  ];
+  // static List<DropdownMenuItem<String>> companyDropdownItems = [
+  //   DropdownMenuItem(value: 'Seçilmedi', child: Text('Seçilmedi')),
+  //   DropdownMenuItem(value: 'WE', child: Text('WE')),
+  //   DropdownMenuItem(value: 'BORUSAN', child: Text('BORUSAN')),
+  //   DropdownMenuItem(value: 'FORD', child: Text('FORD')),
+  //   DropdownMenuItem(value: 'DİĞER', child: Text('DİĞER')),
+  // ];
 
   static List<DropdownMenuItem> feedbackSubjectDropdown = [
-    DropdownMenuItem(value: 'Seçilmedi', child: Text('Lütfen bir konu seç')),
-    DropdownMenuItem(value: 'Uygulama Sorunu', child: Text('Uygulama ile alakalı bir sorun var')),
-    DropdownMenuItem(value: 'Diğer', child: Text('Diğer')),
+    DropdownMenuItem(value: LocalizationService.texts.notSelectedText, child: Text('Please choose a topic')),
+    DropdownMenuItem(value: 'Application Issue', child: Text('There is a problem with the application')),
+    DropdownMenuItem(value: 'Other', child: Text('Other')),
   ];
 
   static List<DropdownMenuItem> feedbackAppDropdown = [
-    DropdownMenuItem(value: 'Seçilmedi', child: Text('Konuyla alakalı bir detay seç')),
-    DropdownMenuItem(value: 'Uygulama versiyonu uyumsuz veya eski', child: Text('Uygulama versiyonu uyumsuz')),
-    DropdownMenuItem(value: 'QR kod okunmuyor', child: Text('QR kod okunmuyor')),
+    DropdownMenuItem(value: LocalizationService.texts.notSelectedText, child: Text('Select a relevant detail')),
+    DropdownMenuItem(value: 'Application version is incompatible or outdated', child: Text('App version incompatible')),
     DropdownMenuItem(
-        value: 'Okunan QR kod geçersiz veya sistemde eşleşen makine yok',
-        child: Text('Okunan QR kod geçersiz veya sistemde eşleşen makine yok')),
-    DropdownMenuItem(value: 'Makine kullanım kısmı bugda kaldı', child: Text('Makine kullanım kısmı bugda kaldı')),
+        value: 'The QR code read is invalid or there is no matching box in the system',
+        child: Text('The QR code read is invalid or there is no matching box in the system')),
     DropdownMenuItem(
-        value: 'Uygulamada açılmayan sayfa var / Belirli bir aksiyon alınca uygulama çöküyor',
-        child: Text('Uygulamada açılmayan sayfa var / Belirli bir aksiyon alınca uygulama çöküyor')),
+        value: 'There is an problematic page in the application / The application crashes when taking a certain action',
+        child: Text('There is an problematic page in the application / The application crashes when taking a certain action')),
     DropdownMenuItem(
-        value: 'Uygulamada bazı fonksiyonlar olması gerektiği gibi çalışmıyor',
-        child: Text('Uygulamada bazı fonksiyonlar olması gerektiği gibi çalışmıyor')),
+        value: 'Some functions in the application do not work as they should',
+        child: Text('Some functions in the application do not work as they should')),
   ];
 
   static List<ChallengeModel> challengeList = [
     ChallengeModel(
-      challengeTitle: 'Merdivenleri Kullan',
+      challengeTitle: 'Use the Stairs',
       challengeInfo:
-          'Bacak gününü atlama! Asansörü beklemek yerine merdivenleri kullan. Bu öncü hareket için hem bacakların hem de doğa sana minnettar olacak.',
+          "Don't skip leg day! Take the stairs instead of waiting for the elevator. Both your legs and nature will be grateful to you for this pioneering act.",
       challengeIcon: UIAssets.challengeIcon1,
       challengeImage: UIAssets.challengeStairsImage,
     ),
     ChallengeModel(
-      challengeTitle: 'Sudan Geçirme',
+      challengeTitle: 'Rinsing',
       challengeInfo:
-          'Bulaşıklarını makineye koymadan önce sudan geçirme! Ayda ortalama 10 ton su tasarrufu sağlayarak su, zaman ve maddi israftan kaçın.',
+          "Don't rinse your dishes before you put them in the dishwasher! Avoid wasting water, time and money by saving an average of 10 tons of water per month.",
       challengeIcon: UIAssets.challengeIcon2,
       challengeImage: UIAssets.challengeDishesImage,
     ),
     ChallengeModel(
-      challengeTitle: 'Etsiz Pazartesi',
+      challengeTitle: 'Meatless Monday',
       challengeInfo:
-          'Hareketli pazartesi gününde etsiz beslenme hareketine katıl! Sağlığın, geleceğin ve hayvan hakları için bir gün et yemeyerek öncü hareketinle farkındalık yarat.',
+          "Join the meat-free movement on an active Monday! Raise awareness with your pioneering movement by not eating meat one day for your health, future and animal rights.",
       challengeIcon: UIAssets.challengeIcon3,
       challengeImage: UIAssets.challengeFoodImage,
     ),
     ChallengeModel(
-      challengeTitle: 'Koruyarak Fırçala',
+      challengeTitle: 'Brush Your Teeth',
       challengeInfo:
-          'Eğer günde 2 kez dişlerini fırçalıyorsan (Ki umarız öyledir :)) çok fazla su kullanıyorsun demektir. Dişini fırçalarken veya tıraş olurken suyun açık bırakmayarak gelecek için harekete katıl.',
+          "If you are brushing your teeth twice a day (which we hope so :)) you are using too much water. Join the movement for the future by not leaving the water running while brushing or shaving.",
       challengeIcon: UIAssets.challengeIcon4,
       challengeImage: UIAssets.challengeTeethImage,
     ),
     ChallengeModel(
-      challengeTitle: 'Geri Dönüştür',
+      challengeTitle: 'Recycle',
       challengeInfo:
-          'Atıklarını ayrıştırarak plastiklerini HeroStation kutusuna at! Arkadaşlarını davet ederek eğlenceli, kazançlı, verimli geri dönüşüm alışkanlığı kazanarak öncü olabilirsin.',
+          "Sort your waste and throw your plastics in the HeroStation box! You can become a pioneer by inviting your friends and gaining a fun, profitable and efficient recycling habit.",
       challengeIcon: UIAssets.challengeIcon5,
       challengeImage: UIAssets.challengeMachineImage,
     ),
   ];
 
+  // static List<DropdownMenuItem> feedbackAppDropdown = [
+  //   DropdownMenuItem(value: 'Seçilmedi', child: Text('Konuyla alakalı bir detay seç')),
+  //   DropdownMenuItem(value: 'Uygulama versiyonu uyumsuz veya eski', child: Text('Uygulama versiyonu uyumsuz')),
+  //   DropdownMenuItem(value: 'QR kod okunmuyor', child: Text('QR kod okunmuyor')),
+  //   DropdownMenuItem(
+  //       value: 'Okunan QR kod geçersiz veya sistemde eşleşen makine yok',
+  //       child: Text('Okunan QR kod geçersiz veya sistemde eşleşen makine yok')),
+  //   DropdownMenuItem(value: 'Makine kullanım kısmı bugda kaldı', child: Text('Makine kullanım kısmı bugda kaldı')),
+  //   DropdownMenuItem(
+  //       value: 'Uygulamada açılmayan sayfa var / Belirli bir aksiyon alınca uygulama çöküyor',
+  //       child: Text('Uygulamada açılmayan sayfa var / Belirli bir aksiyon alınca uygulama çöküyor')),
+  //   DropdownMenuItem(
+  //       value: 'Uygulamada bazı fonksiyonlar olması gerektiği gibi çalışmıyor',
+  //       child: Text('Uygulamada bazı fonksiyonlar olması gerektiği gibi çalışmıyor')),
+  // ];
+  ///
+  // static List<ChallengeModel> challengeList = [
+  //   ChallengeModel(
+  //     challengeTitle: 'Merdivenleri Kullan',
+  //     challengeInfo:
+  //         'Bacak gününü atlama! Asansörü beklemek yerine merdivenleri kullan. Bu öncü hareket için hem bacakların hem de doğa sana minnettar olacak.',
+  //     challengeIcon: UIAssets.challengeIcon1,
+  //     challengeImage: UIAssets.challengeStairsImage,
+  //   ),
+  //   ChallengeModel(
+  //     challengeTitle: 'Sudan Geçirme',
+  //     challengeInfo:
+  //         'Bulaşıklarını makineye koymadan önce sudan geçirme! Ayda ortalama 10 ton su tasarrufu sağlayarak su, zaman ve maddi israftan kaçın.',
+  //     challengeIcon: UIAssets.challengeIcon2,
+  //     challengeImage: UIAssets.challengeDishesImage,
+  //   ),
+  //   ChallengeModel(
+  //     challengeTitle: 'Etsiz Pazartesi',
+  //     challengeInfo:
+  //         'Hareketli pazartesi gününde etsiz beslenme hareketine katıl! Sağlığın, geleceğin ve hayvan hakları için bir gün et yemeyerek öncü hareketinle farkındalık yarat.',
+  //     challengeIcon: UIAssets.challengeIcon3,
+  //     challengeImage: UIAssets.challengeFoodImage,
+  //   ),
+  //   ChallengeModel(
+  //     challengeTitle: 'Koruyarak Fırçala',
+  //     challengeInfo:
+  //         'Eğer günde 2 kez dişlerini fırçalıyorsan (Ki umarız öyledir :)) çok fazla su kullanıyorsun demektir. Dişini fırçalarken veya tıraş olurken suyun açık bırakmayarak gelecek için harekete katıl.',
+  //     challengeIcon: UIAssets.challengeIcon4,
+  //     challengeImage: UIAssets.challengeTeethImage,
+  //   ),
+  //   ChallengeModel(
+  //     challengeTitle: 'Geri Dönüştür',
+  //     challengeInfo:
+  //         'Atıklarını ayrıştırarak plastiklerini HeroStation kutusuna at! Arkadaşlarını davet ederek eğlenceli, kazançlı, verimli geri dönüşüm alışkanlığı kazanarak öncü olabilirsin.',
+  //     challengeIcon: UIAssets.challengeIcon5,
+  //     challengeImage: UIAssets.challengeMachineImage,
+  //   ),
+  // ];
+
   static List<String> afterUsageFeedbackList = [
-    "Kuşlardan haber bekleniyor..",
-    "Sihirli formül uygulanıyor..",
-    "Dağınıklık toplanıyor...",
+    LocalizationService.texts.waitingText0,
+    LocalizationService.texts.waitingText1,
+    LocalizationService.texts.waitingText2,
   ];
 }

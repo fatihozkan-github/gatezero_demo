@@ -23,8 +23,8 @@ class DuelView extends StatelessWidget {
                 unselectedLabelColor: Colors.black,
                 indicatorColor: UIColors.primaryColor,
                 tabs: [
-                  Tab(child: Text('Davetlerim', style: UIStyles.tabTitleStyle)),
-                  Tab(child: Text('Aktif Düellolarım', style: UIStyles.tabTitleStyle)),
+                  Tab(child: Text(LocalizationService.texts.duelInvitesTitle, style: UIStyles.tabTitleStyle)),
+                  Tab(child: Text(LocalizationService.texts.activeDuelsTitle, style: UIStyles.tabTitleStyle)),
                 ],
               ),
             ),

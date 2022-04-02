@@ -26,22 +26,27 @@ class _LandingViewState extends State<LandingView> {
 
   List<String> titles = [
     "",
-    "Plastik Atıklarını Geri Dönüştür",
-    "Senin Etkin",
-    "Ödüllerini Topla!",
-    "Takip Et",
-    "Eğlen!",
+    "Recycle Plastic Waste",
+    "Your Effect",
+    "Collect Your Rewards!",
+    "Follow",
+    "Have fun!",
   ];
 
   List<String> details = [
     "Your Gate to a Zero-Waste Life",
-    "Geri dönüşüm kutularınını kullanarak atıklarını geri dönüştürebilirsin.",
-    "Çevreye olan pozitif etkini takip et.",
-    "Fırsat ve ayrıcalıkların tadını çıkar!",
-    "Arkadaşlarının GateZero'daki hareketlerini takip edebilirsin.",
-    "Daha fazla rozet ve Z-Score kazanmak için meydan okumaları tamamlayabilir ve eğlenmek için diğer insanlarla düello yapabilirsin.",
+    "You can recycle your waste by using recycling bins.",
+    "Follow your positive impact on the environment.",
+    "Opportunities and privileges come out!",
+    "You can track your friends' activities on GateZero.",
+    "You can complete the challenges for more badges and Z-Score and challenge other people to duel for fun.",
   ];
 
+  // "Geri dönüşüm kutularınını kullanarak atıklarını geri dönüştürebilirsin.",
+  // "Çevreye olan pozitif etkini takip et.",
+  // "Fırsat ve ayrıcalıkların tadını çıkar!",
+  // "Arkadaşlarının GateZero'daki hareketlerini takip edebilirsin.",
+  // "Daha fazla rozet ve Z-Score kazanmak için meydan okumaları tamamlayabilir ve eğlenmek için diğer insanlarla düello yapabilirsin.",
   @override
   Widget build(BuildContext context) {
     return BaseView(

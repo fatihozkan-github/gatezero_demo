@@ -148,7 +148,7 @@ class _PostWidgetState extends State<PostWidget> with SingleTickerProviderStateM
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 20),
-                    OrDivider(text: 'Yorumlar'),
+                    OrDivider(text: 'Comments'),
                     SizedBox(height: 10),
                     Expanded(
                       child: OverScroll(
@@ -163,7 +163,7 @@ class _PostWidgetState extends State<PostWidget> with SingleTickerProviderStateM
                     ),
                     RoundedTextField(
                       controller: _controller,
-                      hintText: 'Yorum yap...',
+                      hintText: 'Your comment',
                       icon: Icons.add_comment_rounded,
                       suffixIcon: GestureDetector(
                         child: Icon(Icons.send_rounded, color: UIColors.primaryColor),

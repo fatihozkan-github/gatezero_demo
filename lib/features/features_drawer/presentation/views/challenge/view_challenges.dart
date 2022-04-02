@@ -1,5 +1,6 @@
 import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
 import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
+import 'package:gatezero_demo/core/services/service_localization.dart';
 import 'package:speech_balloon/speech_balloon.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -43,7 +44,7 @@ class _ChallengeViewState extends State<ChallengeView> {
       model: BaseViewModel(),
       builder: (_, vm, __) {
         return Scaffold(
-          appBar: AppBar(title: OverFlowHandler(child: Text('Meydan Okuma'))),
+          appBar: AppBar(title: OverFlowHandler(child: Text(LocalizationService.texts.drawerItemChallenges))),
           body: OverScroll(
             child: ListView(
               children: [
@@ -171,10 +172,10 @@ class _ChallengeViewState extends State<ChallengeView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButton(child: Text('Geri Dön'), onPressed: () => Navigator.pop(context)),
+                          TextButton(child: Text(LocalizationService.texts.returnButtonText), onPressed: () => Navigator.pop(context)),
                           SizedBox(width: 20),
                           ElevatedButton(
-                            child: Text('Kabul!'),
+                            child: Text(LocalizationService.texts.acceptButtonText),
                             onPressed: _currentChallengeStep == UILists.challengeList.indexOf(challengeData) + 1
                                 ? () => vm.appRouter.push(ChallengeDetailViewRoute(challengeData: challengeData))
                                 : null,

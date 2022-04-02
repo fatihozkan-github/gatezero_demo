@@ -36,7 +36,7 @@ class _FeedbackViewState extends State<FeedbackView> {
             label: LocalizationService.texts.sendButtonText,
             onPressed: () async {
               if (_controller.text.isNotEmpty) {
-                UIUtils.showToast("Geri bildirimini aldık, teşekkür ederiz!", success: true);
+                UIUtils.showToast("We got your feedback, thank you!", success: true);
                 setState(() {
                   FocusManager.instance.primaryFocus.nextFocus();
                   _controller.clear();
@@ -44,7 +44,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                   _dropdownDetailValue = LocalizationService.texts.notSelectedText;
                 });
               } else {
-                UIUtils.showToast("Lütfen bir geri bildirim yaz!", success: false);
+                UIUtils.showToast("Please write a feedback!", success: false);
               }
             },
           ),
@@ -62,16 +62,20 @@ class _FeedbackViewState extends State<FeedbackView> {
           GateZeroDropdown(
             value: _dropdownSubjectValue,
             items: UILists.feedbackSubjectDropdown,
-            onChanged: _dropdownDetailValue != 'Seçilmedi' ? null : (index) => setState(() => _dropdownSubjectValue = index),
+            onChanged: _dropdownDetailValue != LocalizationService.texts.notSelectedText
+                ? null
+                : (index) => setState(() => _dropdownSubjectValue = index),
           ),
           SizedBox(height: 15),
-          if (_dropdownSubjectValue != 'Diğer')
+          if (_dropdownSubjectValue != 'Other')
             Column(
               children: [
                 GateZeroDropdown(
                   value: _dropdownDetailValue,
                   items: UILists.feedbackAppDropdown,
-                  onChanged: _dropdownSubjectValue == 'Seçilmedi' ? null : (index) => setState(() => _dropdownDetailValue = index),
+                  onChanged: _dropdownSubjectValue == LocalizationService.texts.notSelectedText
+                      ? null
+                      : (index) => setState(() => _dropdownDetailValue = index),
                 ),
                 SizedBox(height: 15),
               ],
@@ -87,7 +91,7 @@ class _FeedbackViewState extends State<FeedbackView> {
               filled: true,
               isDense: true,
               fillColor: UIColors.fillColor,
-              hintText: 'Mesajın (Boş Bırakılabilir)',
+              hintText: 'Message(Can be empty)',
               contentPadding: EdgeInsets.symmetric(vertical: 20.0),
               prefixIcon: Icon(Icons.message, color: UIColors.primaryColor, size: 25),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0), borderSide: BorderSide.none),

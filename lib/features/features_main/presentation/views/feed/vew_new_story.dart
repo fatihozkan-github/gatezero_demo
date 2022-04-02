@@ -75,7 +75,7 @@ class _NewStoryViewState extends State<NewStoryView> {
           backgroundColor: Colors.black,
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-            title: Text('Foto Yükle'),
+            title: Text('Upload Photo'),
             actions: [
               IconButton(
                 icon: Icon(Icons.send),
@@ -84,7 +84,7 @@ class _NewStoryViewState extends State<NewStoryView> {
                     if (value != null) {
                       vm.appRouter.push(ShareStoryViewRoute(storyImage: value));
                     } else
-                      UIUtils.showToast('Devam etmek için resim seç!');
+                      UIUtils.showToast('Choose picture to continue!');
                   });
                 },
               )
@@ -104,11 +104,11 @@ class _NewStoryViewState extends State<NewStoryView> {
       context: context,
       builder: (context) => StatefulBuilder(builder: (context, setter) {
         return AlertDialog(
-          title: Text('Bir renk seç!'),
+          title: Text('Choose a color!'),
           content: SingleChildScrollView(child: ColorPicker(pickerColor: _pickerColor, onColorChanged: changeColor, labelTypes: [])),
           actions: <Widget>[
             ElevatedButton(
-              child: Text('Tamam'),
+              child: Text('OK'),
               onPressed: () {
                 setState(() => _currentColor = _pickerColor);
                 Navigator.of(context).pop();
@@ -175,7 +175,7 @@ class _NewStoryViewState extends State<NewStoryView> {
           children: [
             ElevatedButton.icon(
               icon: Icon(Icons.add_photo_alternate_rounded, color: Colors.white, size: 50),
-              label: Text('Fotoğraf Yükle', style: TextStyle(color: Colors.white)),
+              label: Text('Upload Photo', style: TextStyle(color: Colors.white)),
               onPressed: _openGalleryView,
             ),
           ],
@@ -188,7 +188,7 @@ class _NewStoryViewState extends State<NewStoryView> {
               delay: Duration(milliseconds: 500),
               child: ElevatedButton.icon(
                 icon: Icon(Icons.font_download_rounded, color: Colors.white, size: 20),
-                label: Text('Renk Seç', style: TextStyle(color: Colors.white)),
+                label: Text('Choose Color', style: TextStyle(color: Colors.white)),
                 onPressed: () async => await showPicker(),
               ),
             ),

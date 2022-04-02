@@ -16,8 +16,8 @@ void main() async {
   runApp(
     EasyLocalization(
       path: LocalizationService.translationsPath,
-      fallbackLocale: LocalizationService.supportedLocales.first,
-      supportedLocales: [LocalizationService.supportedLocales.first],
+      fallbackLocale: LocalizationService.supportedLocales[1],
+      supportedLocales: [LocalizationService.supportedLocales[1]],
       child: GateZero(),
     ),
   );
@@ -41,8 +41,8 @@ class GateZero extends StatelessWidget {
             darkTheme: darkTheme,
             routerDelegate: AutoRouterDelegate(GetIt.I<AppRouter>()),
             routeInformationParser: GetIt.I<AppRouter>().defaultRouteParser(),
-            locale: LocalizationService.supportedLocales.first,
-            supportedLocales: [LocalizationService.supportedLocales.first],
+            locale: LocalizationService.supportedLocales[1],
+            supportedLocales: [LocalizationService.supportedLocales[1]],
             localizationsDelegates: context.localizationDelegates,
           );
         },

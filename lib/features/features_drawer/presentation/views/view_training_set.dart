@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gatezero_demo/core/services/service_localization.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../../../core/UI/widgets/rounded_list_tile.dart';
@@ -18,7 +19,7 @@ class _TrainingSetState extends State<TrainingSetView> {
   YoutubePlayerController _controller;
   List<TrainingVideo> allVideos = [
     TrainingVideo(
-      title: "WE - HeroStation Kullanımı",
+      title: "WE - HeroStation Usage",
       durationMinutes: 1,
       hasSurvey: false,
       youtubeId: "s84s8iBr_Tc",
@@ -56,7 +57,7 @@ class _TrainingSetState extends State<TrainingSetView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Eğitim Seti')),
+      appBar: AppBar(title: Text(LocalizationService.texts.drawerItemTraining)),
       body: isLoading
           ? LoadingWidget()
           : Column(
@@ -82,15 +83,16 @@ class _TrainingSetState extends State<TrainingSetView> {
                       return RoundedListTile(
                         onPressed: () => setState(() => _controller.load(allVideos[index].youtubeId)),
                         title: Text(allVideos[index].title, style: TextStyle(color: Colors.black, fontSize: 16)),
-                        subTitle: Text('${allVideos[index].durationMinutes} dk ', style: TextStyle(color: Colors.black, fontSize: 15)),
+                        subTitle:
+                            Text('${allVideos[index].durationMinutes} min ', style: TextStyle(color: Colors.black, fontSize: 15)),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(_isCompleted ? 'İzlendi' : 'İzlenmedi',
+                            Text(_isCompleted ? 'Watched' : 'Unwatched',
                                 style: TextStyle(color: _isCompleted ? Colors.grey : Colors.black, fontSize: 16)),
                             SizedBox(height: 4),
-                            Text('10 Coin', style: TextStyle(color: _isCompleted ? Colors.grey : Colors.black, fontSize: 15)),
+                            Text('10 Z-score', style: TextStyle(color: _isCompleted ? Colors.grey : Colors.black, fontSize: 15)),
                           ],
                         ),
                       );

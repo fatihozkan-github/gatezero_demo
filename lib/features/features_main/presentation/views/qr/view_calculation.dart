@@ -101,6 +101,7 @@ class _CalculationViewState extends State<CalculationView> with SingleTickerProv
                     ],
                   ),
                   _getDetailWidgets(),
+                  // Lottie.asset(UIAssets.tree1Gif),
                 ],
               ),
             ),

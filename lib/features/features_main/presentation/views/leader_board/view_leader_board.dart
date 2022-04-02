@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
-import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
 
 import '../../../../../core/UI/shared/colors.dart';
 import '../../../../../core/UI/shared/styles.dart';

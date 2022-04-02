@@ -5,6 +5,7 @@ import '../../../../../core/UI/shared/colors.dart';
 import '../../../../../core/UI/widgets/custom_scaffold.dart';
 import '../../../../../core/UI/widgets/over_scroll.dart';
 import '../../../../../core/UI/widgets/pull_refresher.dart';
+import '../../../../../core/services/service_localization.dart';
 import '../../../data/models/model_post.dart';
 import '../../../data/models/model_story.dart';
 import '../../view_models/feed/view_model_feed.dart';
@@ -40,7 +41,7 @@ class _FeedViewState extends State<FeedView> {
                           onTap: () => vm.navigateTo('/view_new_story'),
                           child: Icon(Icons.add_circle_rounded, size: 70, color: UIColors.primaryColor),
                         ),
-                        Text('Hikaye ekle'),
+                        Text(LocalizationService.texts.addStoryText),
                       ],
                     ),
                     Expanded(

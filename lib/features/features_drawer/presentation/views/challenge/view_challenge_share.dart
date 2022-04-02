@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:gatezero_demo/core/services/service_localization.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class ChallengeShareView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Paylaş!')),
+      appBar: AppBar(title: Text(LocalizationService.texts.shareButtonText)),
       body: OverScroll(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -43,7 +44,7 @@ class ChallengeShareView extends StatelessWidget {
                           colors: [Colors.black, Colors.transparent], begin: Alignment.bottomCenter, end: Alignment.topCenter),
                     ),
                     child: Text(
-                      '${challengeData.challengeTitle} mücadelesine ortak ol!',
+                      'Support me in ${challengeData.challengeTitle} challenge!',
                       style: UIStyles.infoStyle.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
@@ -53,7 +54,7 @@ class ChallengeShareView extends StatelessWidget {
             ),
             SizedBox(height: 10),
             AsyncButton(
-                label: 'PAYLAŞ',
+                label: LocalizationService.texts.shareButtonText,
                 onPressed: () async => await GeneralUtils.takeSSandShare(_ssController, ssName: challengeData.challengeTitle)),
           ],
         ),

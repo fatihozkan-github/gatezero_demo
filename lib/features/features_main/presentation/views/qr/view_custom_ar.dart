@@ -125,7 +125,8 @@ class _CustomARViewState extends State<CustomARView> {
           scale: math.Vector3(0.6, 0.6, 0.6),
           position: math.Vector3(0.05, -0.2, -0.6),
           rotation: math.Vector4(1.0, 0.0, 0.0, 0.0),
-          uri: "https://github.com/fatihozkan-github/3Dmodels/raw/master/scene.glb",
+          uri: "https://github.com/fatihozkan-github/3Dmodels/raw/master/new_model.glb",
+          // uri: "https://github.com/fatihozkan-github/3Dmodels/raw/master/scene.glb",
         );
         bool didAddNodeToAnchor = await arObjectManager.addNode(newNode, planeAnchor: newAnchor);
         if (didAddNodeToAnchor) {

@@ -45,7 +45,7 @@ class _ChallengeDetailViewState extends State<ChallengeDetailView> {
                       vm.appRouter
                           .push(ChallengeShareViewRoute(imageData: imageData.readAsBytesSync(), challengeData: widget.challengeData));
                     },
-                    label: 'Fotoğraf Çek',
+                    label: 'Take a photo',
                   ),
                 ],
               ),

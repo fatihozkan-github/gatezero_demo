@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import '../../../../../core/UI/presentation/view_base.dart';
 import '../../../../../core/UI/shared/colors.dart';
 import '../../../../../core/UI/widgets/rounded_button.dart';
 import '../../../../../core/UI/widgets/rounded_text_field.dart';
+import '../../../../../core/services/service_localization.dart';
 import '../../view_models/map/view_model_map.dart';
 
 class MapFeedbackView extends StatefulWidget {
@@ -13,7 +14,7 @@ class MapFeedbackView extends StatefulWidget {
 }
 
 class _MapFeedbackViewState extends State<MapFeedbackView> {
-  final String _infoMessage = "WE topluluğu ile birlikte alanı temizlemek için etkinlik düzenleme isteği gönderebilirsin.";
+  final String _infoMessage = LocalizationService.texts.mapFeedbackInfoBody;
   final TextEditingController _subjectController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey();
@@ -24,7 +25,7 @@ class _MapFeedbackViewState extends State<MapFeedbackView> {
       model: MapViewModel(),
       builder: (_, MapViewModel vm, __) {
         return Scaffold(
-          appBar: AppBar(title: Text('Etkinlik İsteği')),
+          appBar: AppBar(title: Text(LocalizationService.texts.mapFeedbackTitle)),
           body: Form(
             key: _formKey,
             child: ListView(
@@ -42,7 +43,7 @@ class _MapFeedbackViewState extends State<MapFeedbackView> {
                     ),
                     child: Column(
                       children: [
-                        Text('Kirli Olduğunu Düşündüğün Bölgeyi Bize Bildir!')
+                        Text(LocalizationService.texts.mapFeedbackInfoTitle)
                             .textStyle(TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold))
                             .textAlignment(TextAlign.center),
                         SizedBox(height: 5),
@@ -52,9 +53,10 @@ class _MapFeedbackViewState extends State<MapFeedbackView> {
                   ),
                 ),
                 SizedBox(height: 40),
-                RoundedTextField(hintText: 'Konu', icon: Icons.mail_rounded, controller: _subjectController),
                 RoundedTextField(
-                  hintText: 'Mesajınız',
+                    hintText: LocalizationService.texts.mapFeedbackSubject, icon: Icons.mail_rounded, controller: _subjectController),
+                RoundedTextField(
+                  hintText: LocalizationService.texts.mapFeedbackMessage,
                   icon: Icons.message,
                   maxLines: null,
                   textInputAction: TextInputAction.newline,
@@ -62,7 +64,7 @@ class _MapFeedbackViewState extends State<MapFeedbackView> {
                 ),
                 SizedBox(height: 15),
                 RoundedButton(
-                  text: 'Gönder',
+                  text: LocalizationService.texts.sendButtonText,
                   onPressed: () => setState(() => vm.validateForm(_formKey, controllers: [_messageController, _subjectController])),
                 ),
                 SizedBox(height: 20),

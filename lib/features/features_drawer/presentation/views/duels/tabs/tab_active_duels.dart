@@ -1,9 +1,10 @@
-import 'package:gatezero_demo/core/UI/shared/mock_lists.dart';
 import 'package:expandable_widgets/expandable_widgets.dart';
-import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../../core/UI/shared/mock_lists.dart';
+import '../../../../../../core/services/service_localization.dart';
+import '../../../../../../providers/provider_user.dart';
 import '../../../widgets/duel_bar.dart';
 
 class ActiveDuelsTab extends StatelessWidget {
@@ -16,7 +17,7 @@ class ActiveDuelsTab extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            Text('Aktif Düellolarım', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(LocalizationService.texts.activeDuelsTitle, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             SizedBox(height: 5),
             Expanded(child: ListView(physics: BouncingScrollPhysics(), children: [GetExpandable()])),
           ],
@@ -35,8 +36,8 @@ class GetExpandable extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
         primaryWidget: Expanded(
           child: ListTile(
-            title: Text('Fatih Özkan ile düellodasın!'),
-            subtitle: Text("27.03 tarihine kadar mücadele et!"),
+            title: Text(LocalizationService.texts.duelingWithText + ' Fatih Özkan'),
+            subtitle: Text(LocalizationService.texts.duelTimeText + " 27.03"),
           ),
         ),
         secondaryWidget: DuelBar(

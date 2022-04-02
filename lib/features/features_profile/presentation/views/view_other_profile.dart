@@ -11,6 +11,7 @@ import '../../../../core/UI/shared/utils.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../core/UI/widgets/widget_avatar_back_ground.dart';
 import '../../../../core/models/model_friend.dart';
+import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../../../core/models/model_user.dart';
 import '../../../../providers/provider_user.dart';
@@ -72,13 +73,13 @@ class _OtherProfileViewState extends State<OtherProfileView> {
               _currentUser.friends.contains(friendModel)
                   ? OutlinedButton.icon(
                       icon: Icon(Icons.check_rounded, color: UIColors.primaryColor),
-                      label: Text("ARKADAŞSINIZ",
+                      label: Text(LocalizationService.texts.friendProfileRemoveFriend,
                           textAlign: TextAlign.center, style: TextStyle(color: UIColors.primaryColor, fontSize: 15)),
                       onPressed: () async {},
                     )
                   : OutlinedButton.icon(
                       icon: Icon(Icons.person_add_alt_1_rounded, color: UIColors.primaryColor),
-                      label: Text("ARKADAŞ EKLE",
+                      label: Text(LocalizationService.texts.friendProfileAddFriend,
                           textAlign: TextAlign.center, style: TextStyle(color: UIColors.primaryColor, fontSize: 15)),
                       onPressed: () async {
                         userProvider.addFriend(friendModel);
@@ -92,15 +93,13 @@ class _OtherProfileViewState extends State<OtherProfileView> {
                       alignment: Alignment.topCenter,
                       children: [
                         Text(
-                          "Arkadaşını düelloya davet et!\nHem sen hem o ayrıcalıklardan yararlanın!",
+                          LocalizationService.texts.friendProfileDuelInviteInfo,
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 17),
                         ),
                         GestureDetector(
                           child: Lottie.asset(UIAssets.swordsGif, height: 200, fit: BoxFit.fitWidth),
-                          onTap: () {
-                            UIUtils.showToast("Düelloya davet edildi, bol şans!", shortDuration: false);
-                          },
+                          onTap: () => UIUtils.showToast("Your friend has been challenged, good luck!", shortDuration: false),
                         ),
                       ],
                     )
@@ -112,14 +111,15 @@ class _OtherProfileViewState extends State<OtherProfileView> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
-                  'Kendini düelloya davet edemezsin :) Fakat tek rakibim benim diyorsan:',
+                  LocalizationService.texts.cannotInviteThemselves,
                   textAlign: TextAlign.center,
                   style: UIStyles.infoStyle,
                 ),
               ),
               SizedBox(height: 15),
               Center(
-                child: ElevatedButton(child: Text('Meydan Okumalar'), onPressed: () => vm.navigateTo('/view_challenges')),
+                child: ElevatedButton(
+                    child: Text(LocalizationService.texts.drawerItemChallenges), onPressed: () => vm.navigateTo('/view_challenges')),
               ),
             ],
           );
@@ -130,8 +130,8 @@ class _OtherProfileViewState extends State<OtherProfileView> {
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: [
-          _getDetailWidget("${friendData.coins ?? 0}", "WE Coin", UIAssets.coinIcon),
-          _getDetailWidget("${friendData.recycled ?? 0} g", "Dönüştürüldü", UIAssets.recycleSignIcon),
+          _getDetailWidget("${friendData.coins ?? 0}", LocalizationService.texts.zScoreEarned, UIAssets.coinIcon),
+          _getDetailWidget("${friendData.recycled ?? 0} g", LocalizationService.texts.friendProfileRecycled, UIAssets.recycleSignIcon),
         ],
       );
 

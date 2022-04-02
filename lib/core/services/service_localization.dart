@@ -56,6 +56,7 @@ class LocalizedText {
   String returnButtonText = 'returnButtonText'.tr();
   String cancelButtonText = 'cancelButtonText'.tr();
   String acceptButtonText = 'acceptButtonText'.tr();
+  String shareButtonText = 'shareButtonText'.tr();
 
   /// UI
   String copiedToClipBoard = 'copiedToClipBoard'.tr();
@@ -74,6 +75,7 @@ class LocalizedText {
 
   /// Pages ///
   String welcomePageTitle = 'welcomePageTitle'.tr();
+  String addStoryText = 'addStoryText'.tr();
   String mapFeedbackTitle = 'mapFeedbackTitle'.tr();
   String mapFeedbackInfoTitle = 'mapFeedbackInfoTitle'.tr();
   String mapFeedbackInfoBody = 'mapFeedbackInfoBody'.tr();
@@ -93,15 +95,25 @@ class LocalizedText {
   String qrPageInstruction6 = 'qrPageInstruction6'.tr();
   String qrScreenBodyText = 'qrScreenBodyText'.tr();
   String qrScreenGreeting = 'qrScreenGreeting'.tr();
+  String waitingText0 = 'waitingText0'.tr();
+  String waitingText1 = 'waitingText1'.tr();
+  String waitingText2 = 'waitingText2'.tr();
 
   /// Prizes
   String prizePageTitle = 'prizePageTitle'.tr();
+  String joinTheDraw = 'joinTheDraw'.tr();
+  String joinTheDrawSuccess = 'joinTheDrawSuccess'.tr();
+  String joinTheDrawFailure = 'joinTheDrawFailure'.tr();
 
   /// Profile Pages
   String profilePageTitle = 'profilePageTitle'.tr();
   String editProfileTitle = 'editProfileTitle'.tr();
   String editProfileAvatarHint = 'editProfileAvatarHint'.tr();
-  String companySelectionIsAMust = 'companySelectionIsAMust'.tr();
+  String zScoreEarned = 'zScoreEarned'.tr();
+  String impacted = 'impacted'.tr();
+  String carbonFootprint = 'carbonFootprint'.tr();
+  String settings = 'settings'.tr();
+  String exit = 'exit'.tr();
 
   /// Leader Board Pages
   String leaderBoardPageTitle = 'leaderBoardPageTitle'.tr();
@@ -112,7 +124,9 @@ class LocalizedText {
   String friendProfileRecycled = 'friendProfileRecycled'.tr();
   String friendProfileAddFriend = 'friendProfileAddFriend'.tr();
   String friendProfileRemoveFriend = 'friendProfileRemoveFriend'.tr();
+  String friendProfileDuelInviteInfo = 'friendProfileDuelInviteInfo'.tr();
   String leaderBoardFriendsTabNoFriendText = 'leaderBoardFriendsTabNoFriendText'.tr();
+  String cannotInviteThemselves = 'cannotInviteThemselves'.tr();
 
   /// DrawerPages
   /// Badges
@@ -129,6 +143,16 @@ class LocalizedText {
   String badge5Title = 'badge5Title'.tr();
   String badge6Title = 'badge6Title'.tr();
   String badgeQuestion = 'badgeQuestion'.tr();
+
+  /// Duels
+  String duelInvitesTitle = 'duelInvitesTitle'.tr();
+  String activeDuelsTitle = 'activeDuelsTitle'.tr();
+  String duelTimeText = 'duelTimeText'.tr();
+  String duelingWithText = 'duelingWithText'.tr();
+  String incomingDuelInvitations = 'incomingDuelInvitations'.tr();
+  String challengedText = 'challengedText'.tr();
+  String doNotHaveDuelInvite = 'doNotHaveDuelInvite'.tr();
+  String waitingForDuelInviteResponse = 'waitingForDuelInviteResponse'.tr();
 
   /// Invite
   String invitePageText = 'invitePageText'.tr();
