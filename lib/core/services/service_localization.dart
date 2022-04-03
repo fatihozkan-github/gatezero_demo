@@ -42,6 +42,8 @@ class LocalizedText {
   /// Drawer Items
   String drawerItemBadges = 'drawerItemBadges'.tr();
   String drawerItemChallenges = 'drawerItemChallenges'.tr();
+  String drawerItemDuels = 'drawerItemDuels'.tr();
+
   String drawerItemInvite = 'drawerItemInvite'.tr();
   String drawerItemTraining = 'drawerItemTraining'.tr();
   String drawerItemFeedback = 'drawerItemFeedback'.tr();

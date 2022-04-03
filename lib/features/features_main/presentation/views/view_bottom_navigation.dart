@@ -66,7 +66,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
   }
 
   _getAppBar(BottomNavigationViewModel vm) => AppBar(
-        title: OverFlowHandler(child: Text(UILists.bottomNavigationTitles[selectedPage])),
+        title: OverFlowHandler(child: selectedPage == 2 ? Text('Recycle') : Text(UILists.bottomNavigationTitles[selectedPage])),
         leading: IconButton(
           icon: Icon(Icons.bubble_chart_rounded, size: 30),
           onPressed: () => _scaffoldKey.currentState.openDrawer(),

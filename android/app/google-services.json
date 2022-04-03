@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326499544377",
+    "project_id": "gatezero-demo",
+    "storage_bucket": "gatezero-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326499544377:android:ad6ae95def978e39a2cce8",
+        "android_client_info": {
+          "package_name": "com.gatezero_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326499544377-m383n4de1ghm9g5lfpbc9oev9g5h5ktd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBkctkFHKMQ7L50w-V0MlMv0cn9WBulOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326499544377-m383n4de1ghm9g5lfpbc9oev9g5h5ktd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

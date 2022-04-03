@@ -19,6 +19,7 @@ class UIAssets {
   static String badgeQuestionImage = "assets/icons/badges/locked/inactiveBadgeX.png";
   static String challengeTopImage = "assets/images/challenge/challenge_top.png";
   static String challengeBodyImage = "assets/images/challenge/challenge_body.png";
+  static String challengeNewBodyImage = "assets/images/challenge/challenge_bg.png";
   static String challengeDishesImage = "assets/images/challenge/images/challenge_dishes.png";
   static String challengeMachineImage = "assets/images/challenge/images/challenge_machine.png";
   static String challengeStairsImage = "assets/images/challenge/images/challenge_stairs.png";
@@ -34,8 +35,6 @@ class UIAssets {
   static String bottomNavigationLeaderBoardIcon = "assets/bottom_navigation/leaderBoardIcon.png";
   static String challengeIcon = "assets/icons/swords.png";
   static String braceletIcon = "assets/icons/bracelet.png";
-  static String heroStationSmallIcon = "assets/icons/heroStationIconSmall.png";
-  static String heroStationTiltedIcon = "assets/icons/heroStationTiltedIcon.png";
   static String mapEventRequestIcon = "assets/icons/map_event_request.png";
   static String leaderBoardUserIcon = "assets/icons/leader_board/user.png";
   static String leaderBoardFirstUserIcon = "assets/icons/leader_board/first.png";
@@ -46,12 +45,19 @@ class UIAssets {
   static String coinIcon = "assets/icons/coin.png";
   static String recycleSignIcon = "assets/icons/recycle_sign.png";
   static String renewableEnergyIcon = "assets/icons/renewable_energy.png";
+  static String leafIcon = "assets/icons/leaf.png";
   static String challengeHeroIcon = "assets/images/challenge/icons/hero_icon.png";
   static String challengeIcon1 = "assets/images/challenge/icons/challenge_icon1.png";
   static String challengeIcon2 = "assets/images/challenge/icons/challenge_icon2.png";
   static String challengeIcon3 = "assets/images/challenge/icons/challenge_icon3.png";
   static String challengeIcon4 = "assets/images/challenge/icons/challenge_icon4.png";
   static String challengeIcon5 = "assets/images/challenge/icons/challenge_icon5.png";
+  static String challengeIcon6 = "assets/images/challenge/icons/challenge_icon6.png";
+  static String challengeIcon7 = "assets/images/challenge/icons/challenge_icon7.png";
+  static String challengeIcon8 = "assets/images/challenge/icons/challenge_icon8.png";
+  static String challengeIcon9 = "assets/images/challenge/icons/challenge_icon9.png";
+  static String challengeIcon10 = "assets/images/challenge/icons/challenge_icon10.png";
+  static String challengeIcon11 = "assets/images/challenge/icons/challenge_icon11.png";
   static String plasticIcon0 = "assets/icons/faq/0.png";
   static String plasticIcon1 = "assets/icons/faq/1.png";
   static String plasticIcon2 = "assets/icons/faq/2.png";
@@ -86,4 +92,7 @@ class UIAssets {
   static String tree2Gif = "assets/gifs/tree2.json";
   static String prizeEffect1Gif = "assets/gifs/prize_effect1.json";
   static String prizeEffect2Gif = "assets/gifs/prize_effect2.json";
+  static String portalBaseGif = "assets/gifs/portal_base.json";
+  static String starfallGif = "assets/gifs/starfall.json";
+  static String waveGif = "assets/gifs/wave.json";
 }

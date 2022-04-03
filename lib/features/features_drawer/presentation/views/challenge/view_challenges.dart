@@ -26,13 +26,7 @@ class _ChallengeViewState extends State<ChallengeView> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Timer(
-        Duration(milliseconds: 500),
-        () async {
-          int _currentStep = 1;
-          setState(() => _currentChallengeStep = _currentStep);
-        },
-      );
+      Timer(Duration(milliseconds: 500), () async => setState(() => _currentChallengeStep = 1));
     });
     super.initState();
   }
@@ -48,11 +42,11 @@ class _ChallengeViewState extends State<ChallengeView> {
           body: OverScroll(
             child: ListView(
               children: [
-                Image.asset(UIAssets.challengeTopImage, fit: BoxFit.fitWidth),
+                // Image.asset(UIAssets.challengeTopImage, fit: BoxFit.fitWidth),
                 Stack(
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment.bottomCenter,
                   children: [
-                    Image.asset(UIAssets.challengeBodyImage, fit: BoxFit.fitWidth),
+                    Image.asset(UIAssets.challengeNewBodyImage, fit: BoxFit.fitWidth),
                     for (ChallengeModel challenge in UILists.challengeList)
                       _getBalloons(width, UILists.challengeList.indexOf(challenge) + 1, challenge, vm),
                     for (int i = 6; i <= 11; i++) _getPlaceholders(width, i),
@@ -64,9 +58,12 @@ class _ChallengeViewState extends State<ChallengeView> {
                           : _right.contains(_currentChallengeStep)
                               ? width - (width / 10) - 40
                               : 40,
+                      // top: _currentChallengeStep.isOdd
+                      //     ? (_currentChallengeStep * width / 9) - (width / 13) + 25
+                      //     : (_currentChallengeStep * width / 8.8),
                       top: _currentChallengeStep.isOdd
-                          ? (_currentChallengeStep * width / 9) - (width / 13) + 25
-                          : (_currentChallengeStep * width / 8.8),
+                          ? 270 + (_currentChallengeStep * width / 9) - (width / 13) + 25
+                          : 270 + (_currentChallengeStep * width / 8.8),
                     ),
                   ],
                 ),
@@ -86,16 +83,17 @@ class _ChallengeViewState extends State<ChallengeView> {
           ? width / 2 - 25
           : _right.contains(index)
               ? null
-              : 0,
-      right: _right.contains(index) ? 10 : null,
-      top: index.isOdd ? (index * width / 9) - (width / 13) : (index * width / 8.8),
+              : 3,
+      right: _right.contains(index) ? 3 : null,
+      // top: index.isOdd ? (index * width / 9) - (width / 13) : (index * width / 8.8),
+      top: index.isOdd ? 270 + (index * width / 9) - (width / 13) : 270 + (index * width / 8.8),
       child: GestureDetector(
         onTap: () => _getBottomSheet(context, challengeModel, vm),
         child: SpeechBalloon(
           width: _size,
           height: _size,
           nipHeight: 12,
-          color: Colors.orange,
+          color: Colors.purple,
           borderRadius: width / 20,
           nipLocation: index.isOdd
               ? NipLocation.bottom
@@ -104,7 +102,7 @@ class _ChallengeViewState extends State<ChallengeView> {
                   : NipLocation.right,
           child: index <= 5
               ? Padding(padding: EdgeInsets.all(2.0), child: Image.asset(challengeModel.challengeIcon))
-              : Icon(Icons.circle, size: _size),
+              : Padding(padding: EdgeInsets.all(2.0), child: Image.asset(UILists.mockChallengeImages[5])),
         ),
       ),
     );
@@ -118,16 +116,17 @@ class _ChallengeViewState extends State<ChallengeView> {
           ? width / 2 - 25
           : _right.contains(index)
               ? null
-              : 0,
-      right: _right.contains(index) ? 10 : null,
-      top: index.isOdd ? (index * width / 9) - (width / 13) : (index * width / 8.8),
+              : 3,
+      right: _right.contains(index) ? 3 : null,
+      // top: index.isOdd ? (index * width / 9) - (width / 13) : (index * width / 8.8),
+      top: index.isOdd ? 275 + (index * width / 9) - (width / 13) : 275 + (index * width / 8.8),
       child: SpeechBalloon(
         width: _size,
         height: _size,
         nipHeight: 12,
-        color: Colors.blueGrey,
+        color: Colors.purple,
         borderRadius: width / 20,
-        child: Icon(Icons.help_outline_rounded, size: _size, color: Colors.white70),
+        child: Padding(padding: EdgeInsets.all(2.0), child: Image.asset(UILists.mockChallengeImages[index - 6])),
         nipLocation: index.isOdd
             ? NipLocation.bottom
             : _right.contains(index)

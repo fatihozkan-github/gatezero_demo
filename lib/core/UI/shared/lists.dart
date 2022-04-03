@@ -16,7 +16,8 @@ class UILists {
   static List<TabItem> bottomNavigationItems = [
     TabItem(icon: Image.asset(UIAssets.bottomNavigationHomeIcon)),
     TabItem(icon: Image.asset(UIAssets.bottomNavigationMapIcon, color: UIColors.tertiaryColor)),
-    TabItem(icon: Image.asset(UIAssets.bottomNavigationQRIcon, color: UIColors.tertiaryColor)),
+    // TabItem(icon: Image.asset(UIAssets.bottomNavigationQRIcon, color: UIColors.tertiaryColor)),
+    TabItem(icon: Image.asset(UIAssets.generalLogo, color: UIColors.tertiaryColor)),
     TabItem(icon: Image.asset(UIAssets.bottomNavigationPrivilegeIcon, color: UIColors.tertiaryColor)),
     TabItem(icon: Image.asset(UIAssets.bottomNavigationLeaderBoardIcon, color: UIColors.tertiaryColor)),
   ];
@@ -31,7 +32,7 @@ class UILists {
 
   static List<DrawerItemModel> drawerItems = [
     DrawerItemModel(title: LocalizationService.texts.drawerItemBadges, icon: Icons.local_police_rounded, screen: '/view_badges'),
-    DrawerItemModel(title: LocalizationService.texts.drawerItemChallenges, icon: Icons.local_fire_department, screen: '/view_duel'),
+    DrawerItemModel(title: LocalizationService.texts.drawerItemDuels, icon: Icons.local_fire_department, screen: '/view_duel'),
     DrawerItemModel(
         title: LocalizationService.texts.drawerItemTraining, icon: Icons.collections_bookmark, screen: '/view_training_set'),
     DrawerItemModel(
@@ -121,6 +122,16 @@ class UILists {
     DropdownMenuItem(
         value: 'Some functions in the application do not work as they should',
         child: Text('Some functions in the application do not work as they should')),
+  ];
+
+  static List<String> mockChallengeImages = [
+    UIAssets.challengeIcon6,
+    UIAssets.challengeIcon7,
+    UIAssets.challengeIcon8,
+    UIAssets.challengeIcon9,
+    UIAssets.challengeIcon10,
+    UIAssets.challengeIcon11,
+    UIAssets.challengeIcon11,
   ];
 
   static List<ChallengeModel> challengeList = [
