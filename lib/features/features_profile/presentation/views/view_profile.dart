@@ -1,3 +1,4 @@
+import 'package:lottie/lottie.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,17 @@ class _ProfileViewState extends State<ProfileView> {
                     onPressed: () async => vm.shareScreenshot(_ssController),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
+                Text('Stats For The Enthusiast', style: UIStyles.titleStyle, textAlign: TextAlign.center),
+                Lottie.asset(UIAssets.chartsGif, height: 100),
+                Center(
+                  child: ElevatedButton.icon(
+                    icon: Icon(Icons.bar_chart),
+                    label: Text('Let me see!'),
+                    onPressed: () async => vm.navigateTo('/view_statistics'),
+                  ),
+                ),
+                SizedBox(height: 160),
                 OrDivider(text: LocalizationService.texts.drawerItemBadges, spaceAround: 5),
                 _getFooter(vm),
               ],

@@ -95,4 +95,9 @@ class UIAssets {
   static String portalBaseGif = "assets/gifs/portal_base.json";
   static String starfallGif = "assets/gifs/starfall.json";
   static String waveGif = "assets/gifs/wave.json";
+  static String swipeGif = "assets/gifs/statistics/swipe.json";
+  static String recycleBookGif = "assets/gifs/statistics/recycle_book.json";
+  static String bottlesGif = "assets/gifs/statistics/bottles.json";
+  static String houseGif = "assets/gifs/statistics/house.json";
+  static String rotatingLeavesGif = "assets/gifs/statistics/rotating_leaves.json";
 }

@@ -25,7 +25,7 @@ class Mocks {
   static String avatar8 = "assets/mocks/profile_pics/avatar8.png";
 
   /// Posts
-  static String post1 = "assets/mocks/posts/mock_post.jpeg";
+  static String post1 = "assets/mocks/posts/mock_post.png";
   static String post2 = "assets/mocks/posts/mock_post2.jpeg";
 
   /// Lists
