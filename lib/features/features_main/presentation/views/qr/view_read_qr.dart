@@ -1,3 +1,4 @@
+import 'package:gatezero_demo/core/services/service_image.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
@@ -55,7 +56,7 @@ class _ReadQRViewState extends State<ReadQRView> {
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         leading: BackButton(color: UIColors.primaryColor),
-        title: OverFlowHandler(child: Text('Ürünlerini Okut', style: TextStyle(color: UIColors.primaryColor))),
+        title: OverFlowHandler(child: Text('Scan Barcodes', style: TextStyle(color: UIColors.primaryColor))),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -117,6 +118,13 @@ class _ReadQRViewState extends State<ReadQRView> {
                   },
                 ),
               ),
+              OutlinedButton(
+                child: Icon(Icons.camera_alt_outlined, size: 30),
+                onPressed: () async {
+                  await ImageService.openCameraView();
+                  await vm.navigateTo('/view_custom_ar');
+                },
+              ),
               if (vm.productList.isNotEmpty)
                 OutlinedButton(
                   child: Icon(Icons.chevron_right, size: 30),
@@ -133,14 +141,14 @@ class _ReadQRViewState extends State<ReadQRView> {
     );
   }
 
-  _getFallbackBody(ReadQRViewModel vm) => Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+  Column _getFallbackBody(ReadQRViewModel vm) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('QR kod taraması için \nkamera izninize ihtiyacımız var.',
+          Text('We need your \ncamera permission to scan QR code.',
               textAlign: TextAlign.center, style: TextStyle(fontSize: 18, color: UIColors.primaryColor)),
           SizedBox(height: 20),
-          ElevatedButton(child: Text('Kontrol Et'), onPressed: () async => vm.checkPermission()),
+          ElevatedButton(child: Text('Check it'), onPressed: () async => vm.checkPermission()),
         ],
       );
 }

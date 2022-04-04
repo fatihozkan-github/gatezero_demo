@@ -1,5 +1,4 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:gatezero_demo/core/UI/widgets/custom_scaffold.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'dart:collection';
@@ -8,6 +7,7 @@ import '../../../../core/UI/presentation/view_base.dart';
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
 import '../../../../core/UI/shared/lists.dart';
+import '../../../../core/UI/widgets/custom_scaffold.dart';
 import '../../../../core/UI/widgets/overflow_handler.dart';
 import '../../../../core/UI/widgets/gatezero_avatar.dart';
 import '../../../../core/utils/utilities_general.dart';
@@ -20,7 +20,6 @@ import 'map/view_google_map.dart';
 import 'prizes/view_prize.dart';
 import 'qr/view_custom_qr.dart';
 
-/// TODO: Revise
 class BottomNavigationView extends StatefulWidget {
   @override
   _BottomNavigationViewState createState() => _BottomNavigationViewState();
@@ -118,10 +117,10 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          content: Text('Uygulamadan çıkmak istediğine emin misin?', textAlign: TextAlign.center),
+          content: Text('Are you sure you want to exit the app?', textAlign: TextAlign.center),
           actions: <Widget>[
-            ElevatedButton(child: Text('Hayır'), onPressed: () => Navigator.of(context).pop(false)),
-            TextButton(child: Text('Evet'), onPressed: () => Navigator.of(context).pop(true)),
+            ElevatedButton(child: Text('No'), onPressed: () => Navigator.of(context).pop(false)),
+            TextButton(child: Text('Yes'), onPressed: () => Navigator.of(context).pop(true)),
           ],
         );
       },
@@ -143,7 +142,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(GeneralUtils.hasData(currentUser.name) ? currentUser.name : 'İsim Girilmedi!',
+                        Text(GeneralUtils.hasData(currentUser.name) ? currentUser.name : '',
                             style: TextStyle(color: UIColors.tertiaryColor, fontSize: 19)),
                         SizedBox(height: 5),
                         if (GeneralUtils.hasData(currentUser.superHero))

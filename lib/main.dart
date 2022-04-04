@@ -27,7 +27,6 @@ void main() async {
 }
 
 class GateZero extends StatelessWidget {
-  // final appRouter = GetIt.I.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

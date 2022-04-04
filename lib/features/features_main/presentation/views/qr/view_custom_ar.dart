@@ -11,6 +11,7 @@ import 'package:ar_flutter_plugin/models/ar_anchor.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
 import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
+import 'package:gatezero_demo/core/utils/utilities_enums.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -57,7 +58,7 @@ class _CustomARViewState extends State<CustomARView> {
       model: BaseViewModel(),
       builder: (_, BaseViewModel vm, __) {
         return Scaffold(
-          appBar: AppBar(title: const Text('Kutuyu Tanıt!')),
+          appBar: AppBar(title: const Text('Scan the Box!')),
           body: Stack(
             children: [
               ARView(onARViewCreated: onARViewCreated, planeDetectionConfig: PlaneDetectionConfig.horizontal),
@@ -68,8 +69,11 @@ class _CustomARViewState extends State<CustomARView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ElevatedButton(onPressed: onRemoveEverything, child: const Text("Temizle")),
-                      ElevatedButton(onPressed: () => vm.navigateTo('/view_calculation'), child: const Text("Devam Et")),
+                      ElevatedButton(onPressed: onRemoveEverything, child: const Text("Clear")),
+                      ElevatedButton(
+                        onPressed: () => vm.navigateTo('/view_calculation', action: RouterAction.popAndPushNamed),
+                        child: const Text("Continue"),
+                      ),
                     ],
                   ),
                 ),
@@ -145,19 +149,10 @@ class _CustomARViewState extends State<CustomARView> {
   onPanChanged(String nodeName) => print("Continued panning node " + nodeName);
 
   onPanEnded(String nodeName, Matrix4 newTransform) => print("Ended panning node " + nodeName);
-  // final pannedNode = this.nodes.firstWhere((element) => element.name == nodeName);
-  // pannedNode.transform = newTransform;
-  // }
 
   onRotationStarted(String nodeName) => print("Started rotating node " + nodeName);
 
   onRotationChanged(String nodeName) => print("Continued rotating node " + nodeName);
 
   onRotationEnded(String nodeName, Matrix4 newTransform) => print("Ended rotating node " + nodeName);
-// final rotatedNode = this.nodes.firstWhere((element) => element.name == nodeName);
-// }
 }
-
-// uri: "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb",
-// uri: "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/ToyCar/glTF-Binary/ToyCar.glb",
-///

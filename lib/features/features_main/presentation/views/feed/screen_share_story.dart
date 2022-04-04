@@ -1,16 +1,16 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
-import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
-import 'package:gatezero_demo/core/services/service_localization.dart';
-import 'package:gatezero_demo/providers/provider_feed.dart';
-import 'package:gatezero_demo/providers/provider_user.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../core/UI/presentation/view_base.dart';
+import '../../../../../core/UI/presentation/view_model_base.dart';
 import '../../../../../core/UI/widgets/async_button.dart';
 import '../../../../../core/models/model_user.dart';
+import '../../../../../core/services/service_localization.dart';
 import '../../../../../core/utils/utilities_general.dart';
+import '../../../../../providers/provider_feed.dart';
+import '../../../../../providers/provider_user.dart';
 import '../../../data/models/model_story.dart';
 
 class ShareStoryView extends StatelessWidget {

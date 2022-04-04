@@ -1,8 +1,5 @@
 import 'dart:io';
 
-import 'package:gatezero_demo/core/UI/presentation/view_base.dart';
-import 'package:gatezero_demo/core/router/router.gr.dart';
-import 'package:gatezero_demo/features/features_main/presentation/view_models/feed/view_model_new_story.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matrix_gesture_detector/matrix_gesture_detector.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -12,12 +9,15 @@ import 'package:screenshot/screenshot.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import '../../../../../core/UI/presentation/view_base.dart';
 import '../../../../../core/UI/shared/colors.dart';
 import '../../../../../core/UI/shared/lists.dart';
 import '../../../../../core/UI/shared/utils.dart';
 import '../../../../../core/UI/widgets/over_scroll.dart';
+import '../../../../../core/router/router.gr.dart';
 import '../../../../../core/utils/utilities_constants.dart';
 import '../../../../../core/utils/utilities_general.dart';
+import '../../view_models/feed/view_model_new_story.dart';
 
 class NewStoryView extends StatefulWidget {
   @override

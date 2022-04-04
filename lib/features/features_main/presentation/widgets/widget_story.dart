@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/UI/shared/assets.dart';
 import '../../../../core/UI/shared/colors.dart';
+import '../../../../core/services/service_localization.dart';
 import '../../../../core/utils/utilities_general.dart';
 import '../../data/models/model_story.dart';
 
@@ -40,7 +41,7 @@ class StoryWidget extends StatelessWidget {
                           children: [
                             Image.asset(UIAssets.generalLogo),
                             SizedBox(height: 10),
-                            Text("GateZero'ya Hoş Geldin!", style: TextStyle(fontSize: 25, color: Colors.white)),
+                            Text(LocalizationService.texts.welcomePageTitle, style: TextStyle(fontSize: 25, color: Colors.white)),
                           ],
                         ),
                 ),

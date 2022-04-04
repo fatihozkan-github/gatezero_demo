@@ -1,3 +1,11 @@
-import 'package:gatezero_demo/core/UI/presentation/view_model_base.dart';
+import '../../../../../core/UI/presentation/view_model_base.dart';
 
-class CalculationViewModel extends BaseViewModel {}
+class CalculationViewModel extends BaseViewModel {
+  CalculationViewModel() {
+    ///
+  }
+
+  Future<void> init() async {
+    ///
+  }
+}
