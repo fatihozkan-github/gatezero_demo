@@ -113,10 +113,14 @@ class _StatisticsViewState extends State<StatisticsView> with SingleTickerProvid
                   physics: const PageScrollPhysics(),
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   children: [
-                    _getContainer(
-                      size,
-                      UIAssets.presentationGif,
-                      "People often think recycling is cumbersome. Well, we would like to summarize that this is not actually the case :)",
+                    DelayedDisplay(
+                      delay: Duration(milliseconds: 1200),
+                      slidingBeginOffset: const Offset(0.0, 0.05),
+                      child: _getContainer(
+                        size,
+                        UIAssets.presentationGif,
+                        "People often think recycling is cumbersome. Well, we would like to summarize that this is not actually the case :)",
+                      ),
                     ),
                     _getContainer(
                       size,

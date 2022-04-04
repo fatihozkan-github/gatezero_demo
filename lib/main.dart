@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get_it/get_it.dart';
 import 'core/services/service_localization.dart';
 import 'package:gatezero_demo/initials.dart';
@@ -12,7 +13,9 @@ import 'core/router/router.gr.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp();
   Initials.setupInjector();
+
   runApp(
     EasyLocalization(
       path: LocalizationService.translationsPath,
