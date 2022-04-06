@@ -46,6 +46,7 @@ class UIAssets {
   static String recycleSignIcon = "assets/icons/recycle_sign.png";
   static String renewableEnergyIcon = "assets/icons/renewable_energy.png";
   static String leafIcon = "assets/icons/leaf.png";
+  static String co2Icon = "assets/co2.png";
   static String challengeHeroIcon = "assets/images/challenge/icons/hero_icon.png";
   static String challengeIcon1 = "assets/images/challenge/icons/challenge_icon1.png";
   static String challengeIcon2 = "assets/images/challenge/icons/challenge_icon2.png";

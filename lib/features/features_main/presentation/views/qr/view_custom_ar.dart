@@ -57,28 +57,30 @@ class _CustomARViewState extends State<CustomARView> {
     return BaseView(
       model: BaseViewModel(),
       builder: (_, BaseViewModel vm, __) {
-        return Scaffold(
-          appBar: AppBar(title: const Text('Scan the Box!')),
-          body: Stack(
-            children: [
-              ARView(onARViewCreated: onARViewCreated, planeDetectionConfig: PlaneDetectionConfig.horizontal),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(onPressed: onRemoveEverything, child: const Text("Clear")),
-                      ElevatedButton(
-                        onPressed: () => vm.navigateTo('/view_calculation', action: RouterAction.popAndPushNamed),
-                        child: const Text("Continue"),
-                      ),
-                    ],
+        return ScaffoldMessenger(
+          child: Scaffold(
+            appBar: AppBar(title: const Text('Scan the Box!')),
+            body: Stack(
+              children: [
+                ARView(onARViewCreated: onARViewCreated, planeDetectionConfig: PlaneDetectionConfig.horizontal),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(onPressed: onRemoveEverything, child: const Text("Clear")),
+                        ElevatedButton(
+                          onPressed: () => vm.navigateTo('/view_calculation', action: RouterAction.popAndPushNamed),
+                          child: const Text("Continue"),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         );
       },

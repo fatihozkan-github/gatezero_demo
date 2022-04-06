@@ -57,7 +57,7 @@ class _ProfileViewState extends State<ProfileView> {
                     onPressed: () async => vm.navigateTo('/view_statistics'),
                   ),
                 ),
-                SizedBox(height: 160),
+                SizedBox(height: 30),
                 OrDivider(text: LocalizationService.texts.drawerItemBadges, spaceAround: 5),
                 _getFooter(vm),
               ],

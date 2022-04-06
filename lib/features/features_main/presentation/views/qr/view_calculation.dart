@@ -35,8 +35,8 @@ class _CalculationViewState extends State<CalculationView> with SingleTickerProv
     if (Provider.of<InteractionProvider>(context, listen: false).recycleList.isEmpty) {
       recycledAmount = await Provider.of<InteractionProvider>(context, listen: false).getRewards(barcodeRead: false);
     }
-    _expGained = (recycledAmount * 1.2).toInt();
-    _coinGained = (recycledAmount * 1.2).toInt();
+    _expGained = (recycledAmount * 1.3).toInt();
+    _coinGained = (recycledAmount * 1.6).toInt();
     _recycled = (recycledAmount * 0.5).toInt();
     Provider.of<UserProvider>(context, listen: false).currentUser.coins += _coinGained.toInt();
     Provider.of<UserProvider>(context, listen: false).currentUser.exp += _expGained.toInt();
@@ -67,6 +67,7 @@ class _CalculationViewState extends State<CalculationView> with SingleTickerProv
     return BaseView(
       model: CalculationViewModel(),
       builder: (_, CalculationViewModel vm, __) => Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(title: Text(_isCompleted ? 'Get Your Prize' : 'Calculating..')),
         body: _isCompleted ? _getCompletedBody(vm) : _getWaitingBody(),
       ),
@@ -115,7 +116,7 @@ class _CalculationViewState extends State<CalculationView> with SingleTickerProv
         AsyncButton(label: LocalizationService.texts.shareButtonText, onPressed: () async => await vm.shareScreenshot(_ssController)),
         SizedBox(height: 10),
         OrDivider(text: 'OR', spaceAround: 15),
-        Center(child: ElevatedButton(child: Text('Return to Home Page'), onPressed: () => vm.navigateTo('/view_bottom_navigation'))),
+        Center(child: ElevatedButton(child: Text('Return to Home Page'), onPressed: () => vm.navigateTo('/view_profile'))),
       ],
     );
   }
@@ -144,19 +145,20 @@ class _CalculationViewState extends State<CalculationView> with SingleTickerProv
   Row _getDetailWidgets() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _getDetailWidget("$_coinGained", LocalizationService.texts.friendProfileTotalCoin, UIAssets.coinIcon),
-          _getDetailWidget("$_recycled g", LocalizationService.texts.friendProfileRecycled, UIAssets.recycleSignIcon),
+          _getDetailWidget("$_coinGained", "GCoin", UIAssets.coinIcon),
+          _getDetailWidget("yearly", "like a tree", UIAssets.co2Icon, bold: false),
           _getDetailWidget("$_expGained Wh", LocalizationService.texts.impacted, UIAssets.renewableEnergyIcon),
         ],
       );
 
-  _getDetailWidget(String value, String text, String asset) => Expanded(
+  _getDetailWidget(String value, String text, String asset, {bool bold = true}) => Expanded(
         child: Column(
           children: [
-            Image.asset(asset, width: 65),
+            Image.asset(asset, width: 65, height: 65, fit: BoxFit.cover),
             SizedBox(height: 10),
-            Text(value.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-            FittedBox(fit: BoxFit.cover, child: Padding(padding: EdgeInsets.all(8.0), child: Text(text))),
+            Text(value.toString(), style: TextStyle(fontWeight: bold ? FontWeight.bold : FontWeight.normal, fontSize: 18)),
+            FittedBox(
+                fit: BoxFit.cover, child: Padding(padding: EdgeInsets.all(8.0), child: Text(text, style: TextStyle(fontSize: 18)))),
           ],
         ),
       );

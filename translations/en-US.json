@@ -49,7 +49,7 @@
   "leaderBoardTabTitle2": "Friends",
   "leaderBoardFriendsTabNoFriendText": "You haven't added any friends yet. You can follow the race between you and your friends by adding friends!",
   "friendProfileLevel": "Level",
-  "friendProfileTotalCoin": "Z-Score",
+  "friendProfileTotalCoin": "GateZero Score",
   "friendProfileRecycled": "Recycled",
   "friendProfileAddFriend": "Add Friend",
   "friendProfileRemoveFriend": "You are already friends",
@@ -106,7 +106,7 @@
   "challengedText": "challenged to a duel!",
   "doNotHaveDuelInvite": "You don't have a duel invitation yet. You'll be able to see it here when someone invites you!",
   "waitingForDuelInviteResponse": "When your friend accepts your duel, you will be able to see it here",
-  "zScoreEarned": "Z-Score Earned",
+  "zScoreEarned": "Gcoin Earned",
   "impacted": "Impacted",
   "carbonFootprint": "Carbon Footprint",
   "settings": "Settings",
@@ -114,5 +114,5 @@
   "addStoryText": "Add Story",
   "joinTheDraw": "Join the Draw",
   "joinTheDrawSuccess": "Participation in the draw is successful, good luck!",
-  "joinTheDrawFailure": "You don't have enough Z-score!"
+  "joinTheDrawFailure": "You don't have enough Gcoin!"
 }
